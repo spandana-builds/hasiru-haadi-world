@@ -7,8 +7,14 @@ import Plants from "./pages/Plants";
 import Gallery from "./pages/Gallery";
 import Farm from "./pages/Farm";
 import Shop from "./pages/Shop";
+import { useEffect } from "react";
+
 
 function App() {
+  useEffect(() => {
+  document.title = "Hasiru Haadi — Garden, Farm & Green Living";
+}, []);
+
   return (
     <BrowserRouter>
       <Routes>
