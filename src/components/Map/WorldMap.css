@@ -35,11 +35,12 @@
 .map-title {
   position: absolute;
   top: 24px;
-  left: 40px;
+  left: 500px;
   font-size: 2.6rem;
   color: #2d6a4f;
   letter-spacing: 1px;
   z-index: 3;
+ 
 }
 
 /* Path */
