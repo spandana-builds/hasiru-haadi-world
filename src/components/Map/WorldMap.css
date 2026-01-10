@@ -1,0 +1,114 @@
+/* Base */
+.world-map {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+
+  background: linear-gradient(
+    to bottom,
+    #d8f3dc 0%,
+    #b7e4c7 40%,
+    #95d5b2 65%,
+    #74c69d 100%
+  );
+
+  font-family: "Segoe UI", sans-serif;
+}
+
+/* Soft sky depth */
+.world-map::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 35%;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(255,255,255,0.35),
+    transparent 70%
+  );
+  z-index: 0;
+}
+
+/* Title */
+.map-title {
+  position: absolute;
+  top: 24px;
+  left: 40px;
+  font-size: 2.6rem;
+  color: #2d6a4f;
+  letter-spacing: 1px;
+  z-index: 3;
+}
+
+/* Path */
+.map-path {
+  position: absolute;
+  width: 110%;
+  height: 260px;
+  left: -5%;
+  top: 44%;
+  z-index: 1;
+}
+
+.map-path path:first-child {
+  filter:
+    drop-shadow(0 6px 0 rgba(116, 198, 157, 0.45))
+    drop-shadow(0 10px 12px rgba(0,0,0,0.18));
+}
+
+/* Zones */
+.map-zone {
+  position: absolute;
+  z-index: 2;
+  text-align: center;
+  cursor: pointer;
+}
+
+.map-zone span {
+  display: block;
+  margin-top: 6px;
+  font-size: 0.95rem;
+  color: #1b4332;
+}
+
+/* Zone icon */
+.zone-icon {
+  width: 70px;
+  height: 70px;
+  background: #40916c;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  box-shadow:
+    inset 0 2px 4px rgba(255,255,255,0.35),
+    0 8px 16px rgba(0,0,0,0.25);
+}
+
+.zone-icon img {
+  width: 42px;
+  height: 42px;
+}
+
+/* Featured (Village) */
+.map-zone.featured .zone-icon {
+  transform: scale(1.1);
+  background: #2d6a4f;
+}
+
+/* Ground shadow */
+.map-zone::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 34px;
+  height: 10px;
+  background: rgba(0,0,0,0.22);
+  filter: blur(8px);
+  border-radius: 50%;
+}

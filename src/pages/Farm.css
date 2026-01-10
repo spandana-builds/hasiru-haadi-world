@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;600&display=swap');
+
+/* Page base */
+.farm-page {
+  padding: 90px 24px 50px;
+  margin: 0 auto;
+  color: #1b4332;
+  font-family: "Segoe UI", sans-serif;
+  background: linear-gradient(to bottom, #f1faee, #ffffff);
+  
+}
+
+/* ---------- Hero ---------- */
+.farm-hero {
+  text-align: center;
+  margin-bottom: 70px;
+}
+
+.farm-hero h1 {
+  font-size: 2.8rem;
+  margin-bottom: 12px;
+  letter-spacing: 0.5px;
+}
+
+.farm-subtitle {
+  font-size: 1.15rem;
+  opacity: 0.85;
+}
+
+/* ---------- Story ---------- */
+.farm-story {
+  margin-bottom: 70px;
+}
+
+.farm-story h2 {
+  font-size: 1.7rem;
+  margin-bottom: 26px;
+  border-left: 4px solid #52b788;
+  padding-left: 14px;
+}
+
+.farm-story p {
+  line-height: 1.8;
+  margin-bottom: 18px;
+  font-size: 1.05rem;
+  color: #2d6a4f;
+}
+
+.farm-signature {
+  margin-top: 28px;
+  font-style: italic;
+  font-size: 1.05rem;
+  color: #1b4332;
+}
+
+/* ---------- Footer ---------- */
+.farm-footer {
+  text-align: center;
+  margin-top: 50px;
+  font-style: italic;
+  font-size: 0.95rem;
+  opacity: 0.75;
+}
+
+/* ---------- Fade-in animation ---------- */
+.fade-in {
+  opacity: 0;
+  transform: translateY(24px);
+  animation: fadeUp 1.3s ease forwards;
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
