@@ -104,3 +104,14 @@
     transform: translateY(0);
   }
 }
+
+/* ---------- Mobile ---------- */
+@media (max-width: 600px) {
+  .shop-page {
+    padding: 70px 16px 40px;
+  }
+
+  .shop-hero h1 {
+    font-size: 2rem;
+  }
+}

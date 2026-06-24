@@ -3,7 +3,6 @@
 /* Page base */
 .garden-page {
   padding: 90px 24px 50px;
-
   margin: 0 auto;
   color: #1b4332;
   font-family: "Segoe UI", sans-serif;
@@ -139,6 +138,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-wrap: wrap;     /* ← prevents horizontal overflow on small screens */
   gap: 22px;
 }
 
@@ -173,5 +173,27 @@
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+/* ---------- Mobile ---------- */
+@media (max-width: 600px) {
+  .garden-page {
+    padding: 70px 16px 40px;
+  }
+
+  .garden-hero h1 {
+    font-size: 2rem;
+  }
+
+  .garden-story h2,
+  .garden-photos h2,
+  .garden-grow h2,
+  .garden-stages h2 {
+    font-size: 1.35rem;
+  }
+
+  .stage-line {
+    display: none;   /* hides connector lines when stages wrap */
   }
 }

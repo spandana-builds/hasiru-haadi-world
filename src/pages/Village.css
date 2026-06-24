@@ -121,3 +121,14 @@
     transform: translateY(0);
   }
 }
+
+/* ---------- Mobile ---------- */
+@media (max-width: 600px) {
+  .village-page {
+    padding: 70px 16px 40px;
+  }
+
+  .village-hero h1 {
+    font-size: 2rem;
+  }
+}

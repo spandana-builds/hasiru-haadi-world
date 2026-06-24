@@ -24,9 +24,14 @@ a:hover {
 
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
   min-width: 320px;
+  min-height: 100vh;
+  /* Removed: display:flex and place-items:center — they prevent the
+     world map and pages from filling the full viewport width */
+}
+
+#root {
+  width: 100%;
   min-height: 100vh;
 }
 
@@ -101,10 +106,7 @@ button:focus-visible {
   width: 55px;
   height: 55px;
   object-fit: fill;
- 
 }
-
-
 
 .map-zone span {
   font-size: 1rem;
@@ -113,4 +115,19 @@ button:focus-visible {
 .map-zone.far {
   opacity: 0.85;
   filter: blur(0.3px);
+}
+
+/* Smaller zone icons on mobile so they don't overlap */
+@media (max-width: 600px) {
+  .zone-icon {
+    width: 52px;
+    height: 52px;
+  }
+  .zone-icon img {
+    width: 36px;
+    height: 36px;
+  }
+  .map-zone span {
+    font-size: 0.75rem;
+  }
 }

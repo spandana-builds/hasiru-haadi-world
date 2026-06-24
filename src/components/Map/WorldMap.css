@@ -31,16 +31,25 @@
   z-index: 0;
 }
 
-/* Title */
+/* Title — centred horizontally so it works on all screen sizes */
 .map-title {
   position: absolute;
   top: 24px;
-  left: 500px;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
   font-size: 2.6rem;
   color: #2d6a4f;
   letter-spacing: 1px;
   z-index: 3;
- 
+}
+
+/* Smaller title on phones */
+@media (max-width: 600px) {
+  .map-title {
+    font-size: 1.6rem;
+    top: 16px;
+  }
 }
 
 /* Path */
