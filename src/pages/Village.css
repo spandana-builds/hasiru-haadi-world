@@ -3,7 +3,7 @@
 /* ---------- Page base ---------- */
 
 .village-page {
-  padding: 90px 24px 50px;
+  padding: 16px 16px 50px;
   
   margin: 0 auto;
   color: #1b4332;
@@ -24,6 +24,7 @@
   max-height: 380px;
   object-fit: cover;
   border-radius: 22px;
+  display: block;
   margin-bottom: 28px;
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
 }
@@ -125,7 +126,7 @@
 /* ---------- Mobile ---------- */
 @media (max-width: 600px) {
   .village-page {
-    padding: 70px 16px 40px;
+    padding: 16px 16px 40px;
   }
 
   .village-hero h1 {
