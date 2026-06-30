@@ -128,3 +128,9 @@ button:focus-visible {
     font-size: 0.75rem;
   }
 }
+::backdrop{
+  color: #f9f9f9;
+}
+background {
+  background-color: #ffffff;
+}
