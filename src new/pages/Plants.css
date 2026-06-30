@@ -1,78 +1,96 @@
 @import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;600&display=swap');
 
-/* ---------- Page base ---------- */
-
-.village-page {
-  padding: 90px 24px 50px;
-  
+/* Page base */
+.plants-page {
+  padding: 16px 16px 50px;
   margin: 0 auto;
   color: #1b4332;
-  position: relative;
-  overflow-x: auto;
   font-family: "Segoe UI", sans-serif;
   background: linear-gradient(to bottom, #f1faee, #ffffff);
+  
 }
 
 /* ---------- Hero ---------- */
-.village-hero {
+.plants-hero {
   text-align: center;
   margin-bottom: 70px;
 }
 
-.village-hero img {
+.plants-hero img {
   width: 100%;
   max-height: 380px;
   object-fit: cover;
   border-radius: 22px;
+  display: block;
   margin-bottom: 28px;
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
 }
 
-.village-hero h1 {
+.plants-hero h1 {
   font-size: 2.8rem;
   margin-bottom: 12px;
   letter-spacing: 0.5px;
-  color: #1b4332;
-
 }
 
-.village-subtitle {
+.plants-subtitle {
   font-size: 1.15rem;
   opacity: 0.85;
-  color: #1b4332;
- 
 }
 
 /* ---------- Story ---------- */
-.village-story {
+.plants-story {
   margin-bottom: 70px;
 }
 
+.plants-story h2 {
+  font-size: 1.7rem;
+  margin-bottom: 26px;
+  border-left: 4px solid #52b788;
+  padding-left: 14px;
+}
 
-
-
-.village-story p {
+.plants-story p {
   line-height: 1.8;
   margin-bottom: 18px;
   font-size: 1.05rem;
-  color: #1b4332;
-
+  color: #2d6a4f;
 }
 
-.village-signature {
+.plants-signature {
   margin-top: 28px;
   font-style: italic;
   font-size: 1.05rem;
   color: #1b4332;
 }
 
+/* ---------- Footer ---------- */
+.plants-footer {
+  text-align: center;
+  margin-top: 50px;
+  font-style: italic;
+  font-size: 0.95rem;
+  opacity: 0.75;
+}
 
-/* ---------- Village photos ---------- */
-.village-photos {
+/* ---------- Fade-in animation ---------- */
+.fade-in {
+  opacity: 0;
+  transform: translateY(24px);
+  animation: fadeUp 1.3s ease forwards;
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* ---------- Plant photos ---------- */
+.plants-photos {
   margin: 80px 0;
 }
 
-.village-photos h2 {
+.plants-photos h2 {
   font-size: 1.7rem;
   margin-bottom: 30px;
   text-align: center;
@@ -98,37 +116,48 @@
   box-shadow: 0 16px 36px rgba(0, 0, 0, 0.18);
 }
 
-
-/* ---------- Footer ---------- */
-.village-footer {
+/* ---------- Plant tool ---------- */
+.plants-tool {
+  margin: 80px 0;
   text-align: center;
-  margin-top: 50px;
-  font-style: italic;
-  font-size: 0.95rem;
-  opacity: 0.75;
 }
 
-/* ---------- Fade-in animation ---------- */
-.fade-in {
-  opacity: 0;
-  transform: translateY(24px);
-  animation: fadeUp 1.3s ease forwards;
+.plants-tool h2 {
+  font-size: 1.7rem;
+  margin-bottom: 16px;
 }
 
-@keyframes fadeUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.plants-tool p {
+  max-width: 620px;
+  margin: 0 auto 24px;
+  line-height: 1.7;
+  color: #2d6a4f;
+}
+
+.plants-tool-link {
+  display: inline-block;
+  padding: 12px 26px;
+  border-radius: 28px;
+  background: #52b788;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.plants-tool-link:hover {
+  background: #40916c;
+  transform: translateY(-2px);
+  color: #ffffff;
 }
 
 /* ---------- Mobile ---------- */
 @media (max-width: 600px) {
-  .village-page {
-    padding: 70px 16px 40px;
+  .plants-page {
+    padding: 16px 16px 40px;
   }
 
-  .village-hero h1 {
+  .plants-hero h1 {
     font-size: 2rem;
   }
 }

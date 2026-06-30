@@ -2,7 +2,7 @@
 
 /* Page base */
 .shop-page {
-  padding: 16px 16px 50px;
+  padding: 90px 24px 50px;
   margin: 0 auto;
  
   color: #1b4332;
@@ -108,7 +108,7 @@
 /* ---------- Mobile ---------- */
 @media (max-width: 600px) {
   .shop-page {
-    padding: 16px 16px 40px;
+    padding: 70px 16px 40px;
   }
 
   .shop-hero h1 {
