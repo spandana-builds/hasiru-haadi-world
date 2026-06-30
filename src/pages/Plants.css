@@ -4,6 +4,7 @@
 .plants-page {
   padding: 90px 24px 50px;
   margin: 0 auto;
+   margin-top: -55px;
   color: #1b4332;
   font-family: "Segoe UI", sans-serif;
   background: linear-gradient(to bottom, #f1faee, #ffffff);
