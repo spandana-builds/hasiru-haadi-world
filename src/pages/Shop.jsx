@@ -1,6 +1,11 @@
 import BackToMap from "../components/BackToMap";
 import "./Shop.css";
 
+import heroImg from "../assets/shop/hero.jpeg";
+import img2 from "../assets/shop/img2.jpeg";
+import img3 from "../assets/shop/img3.jpeg";
+import img4 from "../assets/shop/img4.jpeg";
+
 export default function Shop() {
   return (
     <div className="shop-page">
@@ -9,7 +14,7 @@ export default function Shop() {
       {/* Hero */}
       <section className="shop-hero fade-in">
         <img
-          src="../../assets/shop/hero.jpeg"
+          src={heroImg}
           alt="Hasiru Haadi Shop"
         />
         <h1>Hasiru Haadi Shop</h1>
@@ -53,19 +58,18 @@ export default function Shop() {
         <h2>Shop Moments</h2>
         <div className="photo-grid">
           <img
-            src="../../assets/shop/img1.jpg"
+            loading="lazy"
+            src={img2}
             alt="Shop moment"
           />
           <img
-            src="../../assets/shop/img2.jpeg"
+            loading="lazy"
+            src={img3}
             alt="Shop moment"
           />
           <img
-            src="../../assets/shop/img3.jpeg"
-            alt="Shop moment"
-          />
-          <img
-            src="../../assets/shop/img4.jpeg"
+            loading="lazy"
+            src={img4}
             alt="Shop moment"
           />
         </div>
