@@ -4,11 +4,9 @@
 .plants-page {
   padding: 90px 24px 50px;
   margin: 0 auto;
-   margin-top: -55px;
   color: #1b4332;
-  font-family: "Segoe UI", sans-serif;
+  font-family: "Plus Jakarta Sans", "Poppins", sans-serif;
   background: linear-gradient(to bottom, #f1faee, #ffffff);
-  
 }
 
 /* ---------- Hero ---------- */
@@ -50,16 +48,17 @@
 }
 
 .plants-story p {
+  font-family: "Crimson Pro", Georgia, serif;
   line-height: 1.8;
   margin-bottom: 18px;
-  font-size: 1.05rem;
+  font-size: 1.15rem;
   color: #2d6a4f;
 }
 
 .plants-signature {
   margin-top: 28px;
   font-style: italic;
-  font-size: 1.05rem;
+  font-size: 1.15rem;
   color: #1b4332;
 }
 
