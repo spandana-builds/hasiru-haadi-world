@@ -40,6 +40,21 @@ export default function Garden() {
           We lovingly call this space <strong>Hasiru Haadi Vegetable Garden</strong> —
           a green path that we walk every day.
         </p>
+
+        <div className="garden-stats">
+          <div className="stat-card">
+            <span className="stat-number">8</span>
+            <span className="stat-label">Garden Beds</span>
+          </div>
+          <div className="stat-card">
+            <span className="stat-number">10+</span>
+            <span className="stat-label">Vegetables &amp; Herbs</span>
+          </div>
+          <div className="stat-card">
+            <span className="stat-number">100%</span>
+            <span className="stat-label">Drip Irrigated</span>
+          </div>
+        </div>
       </section>
 
       {/* Garden Moments */}
@@ -73,11 +88,20 @@ export default function Garden() {
         <h2>Growth Stages</h2>
 
         <div className="stages-flow">
-          <span>🌱</span>
+          <div className="stage-step">
+            <span>🌱</span>
+            <p>Sow</p>
+          </div>
           <div className="stage-line" />
-          <span>🌿</span>
+          <div className="stage-step">
+            <span>🌿</span>
+            <p>Grow</p>
+          </div>
           <div className="stage-line" />
-          <span>🧺</span>
+          <div className="stage-step">
+            <span>🧺</span>
+            <p>Harvest</p>
+          </div>
         </div>
       </section>
 
