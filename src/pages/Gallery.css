@@ -115,6 +115,11 @@
   color: #e9f5ef;
   cursor: pointer;
   opacity: 0.85;
+  background: none;
+  border: none;
+  padding: 0;
+  line-height: 1;
+  font-family: inherit;
 }
 
 .lightbox-close:hover {

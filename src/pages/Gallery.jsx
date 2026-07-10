@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./Gallery.css";
 import BackToMap from "../components/BackToMap";
 
@@ -14,6 +14,17 @@ const images = Object.values(imageModules).map(
 
 export default function Gallery() {
   const [activeImage, setActiveImage] = useState(null);
+
+  useEffect(() => {
+    if (!activeImage) return;
+
+    const handleKeyDown = (e) => {
+      if (e.key === "Escape") setActiveImage(null);
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [activeImage]);
 
   return (
     <div className="gallery-page">
@@ -57,9 +68,20 @@ export default function Gallery() {
       {activeImage && (
         <div
           className="lightbox"
+          role="dialog"
+          aria-modal="true"
+          aria-label="Image preview"
           onClick={() => setActiveImage(null)}
         >
-          <span className="lightbox-close">✕</span>
+          <button
+            type="button"
+            className="lightbox-close"
+            aria-label="Close preview"
+            onClick={() => setActiveImage(null)}
+            autoFocus
+          >
+            ✕
+          </button>
           <img
             src={activeImage}
             alt="Full view"
