@@ -8,6 +8,10 @@ export default function Shop() {
 
       {/* Hero */}
       <section className="shop-hero fade-in">
+        <img
+          src="https://via.placeholder.com/1200x380?text=Hasiru+Haadi+Shop"
+          alt="Hasiru Haadi Shop"
+        />
         <h1>Hasiru Haadi Shop</h1>
         <p className="shop-subtitle">
           A small marketplace rooted in nature and care.
@@ -42,6 +46,29 @@ export default function Shop() {
         <p className="shop-signature">
           Bring a piece of Hasiru Haadi into your own space 🌿
         </p>
+      </section>
+
+      {/* Shop Moments */}
+      <section className="shop-moments fade-in">
+        <h2>Shop Moments</h2>
+        <div className="photo-grid">
+          <img
+            src="https://via.placeholder.com/240x280?text=Shop+Moment"
+            alt="Shop moment"
+          />
+          <img
+            src="https://via.placeholder.com/240x280?text=Shop+Moment"
+            alt="Shop moment"
+          />
+          <img
+            src="https://via.placeholder.com/240x280?text=Shop+Moment"
+            alt="Shop moment"
+          />
+          <img
+            src="https://via.placeholder.com/240x280?text=Shop+Moment"
+            alt="Shop moment"
+          />
+        </div>
       </section>
 
       {/* Beliefs */}
