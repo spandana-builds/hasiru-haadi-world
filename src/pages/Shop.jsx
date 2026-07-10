@@ -9,7 +9,7 @@ export default function Shop() {
       {/* Hero */}
       <section className="shop-hero fade-in">
         <img
-          src="../../assets/shop/hero.jpg"
+          src="../../assets/shop/hero.jpeg"
           alt="Hasiru Haadi Shop"
         />
         <h1>Hasiru Haadi Shop</h1>
@@ -53,19 +53,19 @@ export default function Shop() {
         <h2>Shop Moments</h2>
         <div className="photo-grid">
           <img
-            src="https://via.placeholder.com/240x280?text=Shop+Moment"
+            src="../../assets/shop/img1.jpg"
             alt="Shop moment"
           />
           <img
-            src="https://via.placeholder.com/240x280?text=Shop+Moment"
+            src="../../assets/shop/img2.jpeg"
             alt="Shop moment"
           />
           <img
-            src="https://via.placeholder.com/240x280?text=Shop+Moment"
+            src="../../assets/shop/img3.jpeg"
             alt="Shop moment"
           />
           <img
-            src="https://via.placeholder.com/240x280?text=Shop+Moment"
+            src="../../assets/shop/img4.jpeg"
             alt="Shop moment"
           />
         </div>
