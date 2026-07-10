@@ -1,10 +1,12 @@
 import BackToMap from "../components/BackToMap";
 import "./Shop.css";
 
-import heroImg from "../assets/shop/hero.jpeg";
-import img2 from "../assets/shop/img2.jpeg";
-import img3 from "../assets/shop/img3.jpeg";
+import heroImg from "../assets/shop/hero1.png";
+import img1 from "../assets/shop/img1.jpg";
+import img3 from "../assets/shop/img2.jpeg";
+import img2 from "../assets/shop/img3.jpeg";
 import img4 from "../assets/shop/img4.jpeg";
+import img5 from "../assets/shop/img5.jpg";
 
 export default function Shop() {
   return (
@@ -59,6 +61,11 @@ export default function Shop() {
         <div className="photo-grid">
           <img
             loading="lazy"
+            src={img1}
+            alt="Shop moment"
+          />
+          <img
+            loading="lazy"
             src={img2}
             alt="Shop moment"
           />
@@ -70,6 +77,11 @@ export default function Shop() {
           <img
             loading="lazy"
             src={img4}
+            alt="Shop moment"
+          />
+          <img
+            loading="lazy"
+            src={img5}
             alt="Shop moment"
           />
         </div>
