@@ -1,7 +1,7 @@
 import BackToMap from "../components/BackToMap";
 import "./Shop.css";
 
-import heroImg from "../assets/shop/hero3.png";
+import heroImg from "../assets/shop/hero4.png";
 import img1 from "../assets/shop/img1.jpg";
 import img3 from "../assets/shop/img2.jpeg";
 import img2 from "../assets/shop/img3.jpeg";
