@@ -4,12 +4,10 @@
 
 .village-page {
   padding: 90px 24px 50px;
-   margin-top: -55px;
   margin: 0 auto;
   color: #1b4332;
   position: relative;
-  overflow-x: auto;
-  font-family: "Segoe UI", sans-serif;
+  font-family: "Plus Jakarta Sans", "Poppins", sans-serif;
   background: linear-gradient(to bottom, #f1faee, #ffffff);
 }
 
@@ -33,14 +31,12 @@
   margin-bottom: 12px;
   letter-spacing: 0.5px;
   color: #1b4332;
-
 }
 
 .village-subtitle {
   font-size: 1.15rem;
   opacity: 0.85;
   color: #1b4332;
- 
 }
 
 /* ---------- Story ---------- */
@@ -48,24 +44,20 @@
   margin-bottom: 70px;
 }
 
-
-
-
 .village-story p {
+  font-family: "Crimson Pro", Georgia, serif;
   line-height: 1.8;
   margin-bottom: 18px;
-  font-size: 1.05rem;
+  font-size: 1.15rem;
   color: #1b4332;
-
 }
 
 .village-signature {
   margin-top: 28px;
   font-style: italic;
-  font-size: 1.05rem;
+  font-size: 1.15rem;
   color: #1b4332;
 }
-
 
 /* ---------- Village photos ---------- */
 .village-photos {
