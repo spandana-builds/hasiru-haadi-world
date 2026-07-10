@@ -4,9 +4,8 @@
 .shop-page {
   padding: 90px 24px 50px;
   margin: 0 auto;
- 
   color: #1b4332;
-  font-family: "Segoe UI", sans-serif;
+  font-family: "Plus Jakarta Sans", "Poppins", sans-serif;
   background: linear-gradient(to bottom, #f1faee, #ffffff);
 }
 
@@ -39,15 +38,18 @@
 }
 
 .shop-story p {
+  font-family: "Crimson Pro", Georgia, serif;
   line-height: 1.8;
   margin-bottom: 18px;
-  font-size: 1.05rem;
+  font-size: 1.15rem;
   color: #2d6a4f;
 }
 
 .shop-signature {
   margin-top: 28px;
   font-style: italic;
+  font-size: 1.15rem;
+  color: #1b4332;
 }
 
 /* Beliefs */
@@ -75,6 +77,12 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.belief-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.15);
 }
 
 /* Meesho link */
