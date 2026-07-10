@@ -110,25 +110,72 @@
 }
 
 .belief-card {
-  background: #d8f3dc;
-  padding: 20px;
-  border-radius: 18px;
-  box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+  background: linear-gradient(135deg, #d8f3dc 0%, #c8e6c9 100%);
+  padding: 36px 28px;
+  border-radius: 24px;
+  box-shadow: 0 8px 24px rgba(52, 78, 65, 0.12);
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  gap: 14px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+  text-align: center;
+  border: 2px solid rgba(82, 183, 136, 0.2);
 }
 
 .belief-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 12px 28px rgba(0,0,0,0.15);
+  transform: translateY(-8px);
+  box-shadow: 0 16px 40px rgba(52, 78, 65, 0.2);
+  background: linear-gradient(135deg, #c8e6c9 0%, #b5ddb3 100%);
+  border-color: rgba(82, 183, 136, 0.4);
+}
+
+.belief-card strong {
+  font-size: 1.3rem;
+  color: #1b4332;
+  display: block;
+  margin-top: 8px;
+}
+
+.belief-card span {
+  font-size: 0.95rem;
+  color: #2d6a4f;
+  line-height: 1.6;
 }
 
 /* Meesho link */
 .shop-link {
   text-align: center;
   margin: 70px 0;
+  padding: 50px 30px;
+  background: linear-gradient(135deg, #f1faee 0%, #e8f5e9 100%);
+  border-radius: 24px;
+  border: 2px solid #d8f3dc;
+}
+
+.shop-link p {
+  font-size: 1.2rem;
+  color: #1b4332;
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+
+.shop-link a {
+  display: inline-block;
+  padding: 14px 28px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #2d6a4f 0%, #1b4332 100%);
+  color: #fff;
+  font-size: 1.05rem;
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: 0 8px 24px rgba(45, 106, 79, 0.25);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+}
+
+.shop-link a:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 32px rgba(45, 106, 79, 0.35);
+  background: linear-gradient(135deg, #1b4332 0%, #0d3b2e 100%);
 }
 
 /* Footer */

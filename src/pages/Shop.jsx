@@ -9,7 +9,7 @@ export default function Shop() {
       {/* Hero */}
       <section className="shop-hero fade-in">
         <img
-          src="https://via.placeholder.com/1200x380?text=Hasiru+Haadi+Shop"
+          src="../../assets/shop/hero.jpg"
           alt="Hasiru Haadi Shop"
         />
         <h1>Hasiru Haadi Shop</h1>
@@ -77,17 +77,20 @@ export default function Shop() {
 
         <div className="belief-grid">
           <div className="belief-card">
-            🌼 <strong>Nature is our home</strong>
+            <span style={{ fontSize: "2.5rem" }}>🌼</span>
+            <strong>Nature is our home</strong>
             <span>We cherish and protect it.</span>
           </div>
 
           <div className="belief-card">
-            🧵 <strong>Simplicity is beauty</strong>
+            <span style={{ fontSize: "2.5rem" }}>🧵</span>
+            <strong>Simplicity is beauty</strong>
             <span>We keep our designs and products minimal.</span>
           </div>
 
           <div className="belief-card">
-            🤝 <strong>Community is strength</strong>
+            <span style={{ fontSize: "2.5rem" }}>🤝</span>
+            <strong>Community is strength</strong>
             <span>We believe in supporting local and growing together.</span>
           </div>
         </div>
@@ -96,22 +99,10 @@ export default function Shop() {
       {/* Meesho Link */}
       <section className="shop-link fade-in">
         <p>Visit our live store on Meesho</p>
-
         <a
           href="https://www.meesho.com/Hasiruhaadi?_ms=3.0.1"
           target="_blank"
           rel="noopener noreferrer"
-          style={{
-            padding: "10px 16px",
-            borderRadius: "999px",
-            border: "none",
-            background: "#2d6a4f",
-            color: "#fff",
-            fontSize: "14px",
-            cursor: "pointer",
-            textDecoration: "none",
-            boxShadow: "0 4px 10px rgba(0,0,0,0.15)",
-          }}
         >
           Visit Hasiru Haadi on Meesho →
         </a>
