@@ -3,8 +3,7 @@
 /* Page */
 .gallery-page {
   min-height: 100vh;
-   margin-top: -55px;
-  padding: 0.1px 32px 60px;
+  padding: 90px 32px 60px;
   background: linear-gradient(to bottom, #f1faee, #ffffff);
   color: #1b4332;
   font-family: "Segoe UI", sans-serif;
