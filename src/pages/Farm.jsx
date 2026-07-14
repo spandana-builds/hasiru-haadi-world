@@ -1,7 +1,7 @@
 import BackToMap from "../components/BackToMap";
 import "./Farm.css";
 
-import farm1 from "../assets/farm/img1.jpg";
+import farm1 from "../assets/farm/eee.jpg";
 import farm2 from "../assets/farm/img2.jpg";
 import farm3 from "../assets/farm/img3.jpg";
 import farm4 from "../assets/farm/img4.jpg";
