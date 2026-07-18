@@ -6,7 +6,7 @@ import field1 from "../assets/village/fields-1.jpg";
 import field2 from "../assets/village/fields-2.jpg";
 import lifeImg from "../assets/village/village-life.jpg";
 import skyImg from "../assets/village/village-sky.jpg";
-import detailImg from "../assets/village/village-detail.jpg";
+import detailImg from "../assets/village/village-5.jpg";
 
 export default function Village() {
   return (
