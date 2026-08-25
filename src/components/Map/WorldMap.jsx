@@ -14,7 +14,7 @@ export default function WorldMap() {
       {/* Title + tagline */}
       <div className="map-header">
         <h1 className="map-title">Hasiru Haadi</h1>
-        <p className="map-tagline">A green world built by two sisters — plants, farm &amp; village life</p>
+        
       </div>
 
       {/* Curved Path */}
