@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,600;1,600&display=swap');
+
 /* Base */
 .world-map {
   width: 100vw;
@@ -38,9 +40,12 @@
 }
 
 .map-title {
-  font-size: 2.6rem;
+  font-family: "Fraunces", serif;
+  font-weight: 600;
+  font-style: italic;
+  font-size: 3rem;
   color: #2d6a4f;
-  letter-spacing: 1px;
+  letter-spacing: 0.5px;
   margin: 0 0 4px;
 }
 
@@ -177,7 +182,7 @@
 /* ── Mobile ── */
 @media (max-width: 600px) {
   .map-title {
-    font-size: 1.6rem;
+    font-size: 1.8rem;
   }
   .map-tagline {
     font-size: 0.75rem;
