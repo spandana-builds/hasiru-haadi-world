@@ -7,7 +7,7 @@ import villageIcon from "../../assets/icons/village.png";
 import farmIcon from "../../assets/icons/farm.png";
 import galleryIcon from "../../assets/icons/gallery.png";
 import shopIcon from "../../assets/icons/shop.png";
-import journalIcon from "../../assets/icons/journal.svg";
+import journalIcon from "../../assets/icons/journal.png";
 
 export default function WorldMap() {
   return (
