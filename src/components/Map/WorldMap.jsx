@@ -50,13 +50,13 @@ export default function WorldMap() {
       </svg>
 
       {/* Zones */}
-      <MapZone label="Gallery" route="/gallery" icon={galleryIcon} position={{ top: "23%", left: "17%" }} delay={0} />
-      <MapZone label="Shop" route="/shop" icon={shopIcon} position={{ top: "17%", left: "76%" }} delay={0.1} />
-      <MapZone label="Village" route="/village" icon={villageIcon} position={{ top: "38%", left: "45%" }} delay={0.2} featured />
-      <MapZone label="Garden" route="/garden" icon={gardenIcon} position={{ top: "61%", left: "13%" }} delay={0.3} />
-      <MapZone label="Farm" route="/farm" icon={farmIcon} position={{ top: "55%", left: "76%" }} delay={0.4} />
-      <MapZone label="Plants" route="/plants" icon={plantsIcon} position={{ top: "73%", left: "38%" }} delay={0.5} />
-      <MapZone label="Journal" route="/journal" icon={journalIcon} position={{ top: "82%", left: "88%" }} delay={0.6} />
+      <MapZone label="Gallery" route="/gallery" icon={galleryIcon} position={{ top: "18%", left: "18%" }} delay={0} />
+      <MapZone label="Shop" route="/shop" icon={shopIcon} position={{ top: "14%", left: "78%" }} delay={0.1} />
+      <MapZone label="Village" route="/village" icon={villageIcon} position={{ top: "39%", left: "48%" }} delay={0.2} featured />
+      <MapZone label="Garden" route="/garden" icon={gardenIcon} position={{ top: "58%", left: "12%" }} delay={0.3} />
+      <MapZone label="Farm" route="/farm" icon={farmIcon} position={{ top: "51%", left: "83%" }} delay={0.4} />
+      <MapZone label="Plants" route="/plants" icon={plantsIcon} position={{ top: "76%", left: "37%" }} delay={0.5} />
+      <MapZone label="Journal" route="/journal" icon={journalIcon} position={{ top: "77%", left: "84%" }} delay={0.6} />
 
       {/* Explore hint */}
       <div className="explore-hint" aria-hidden="true">
