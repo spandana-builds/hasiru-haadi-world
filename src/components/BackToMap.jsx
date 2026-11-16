@@ -10,9 +10,9 @@ export default function BackToMap() {
       className="back-map-btn"
       onClick={() => navigate("/")}
       aria-label="Back to map"
+      title="Back to map"
     >
-      <FaArrowLeft />
-      <span>Map</span>
+      <FaArrowLeft aria-hidden="true" />
     </button>
   );
 }
