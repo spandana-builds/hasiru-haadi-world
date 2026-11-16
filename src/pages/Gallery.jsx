@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import "./Gallery.css";
 import BackToMap from "../components/BackToMap";
 
@@ -11,16 +11,31 @@ const images = Object.values(imageModules).map((mod) => mod.default);
 
 export default function Gallery() {
   const [activeImage, setActiveImage] = useState(null);
+  const openerRef = useRef(null);
+  const closeButtonRef = useRef(null);
 
   useEffect(() => {
     if (!activeImage) return;
 
+    closeButtonRef.current?.focus();
+
     const handleKeyDown = (event) => {
-      if (event.key === "Escape") setActiveImage(null);
+      if (event.key === "Escape") {
+        setActiveImage(null);
+      }
+
+      // The close button is the only focusable control in this dialog.
+      if (event.key === "Tab") {
+        event.preventDefault();
+        closeButtonRef.current?.focus();
+      }
     };
 
     window.addEventListener("keydown", handleKeyDown);
-    return () => window.removeEventListener("keydown", handleKeyDown);
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+      openerRef.current?.focus();
+    };
   }, [activeImage]);
 
   return (
@@ -43,7 +58,10 @@ export default function Gallery() {
               type="button"
               className="gallery-item"
               key={src}
-              onClick={() => setActiveImage(src)}
+              onClick={(event) => {
+                openerRef.current = event.currentTarget;
+                setActiveImage(src);
+              }}
               aria-label={`Open gallery image ${index + 1}`}
             >
               <img
@@ -70,11 +88,11 @@ export default function Gallery() {
           onClick={() => setActiveImage(null)}
         >
           <button
+            ref={closeButtonRef}
             type="button"
             className="lightbox-close"
             aria-label="Close image preview"
             onClick={() => setActiveImage(null)}
-            autoFocus
           >
             <span aria-hidden="true">✕</span>
           </button>
