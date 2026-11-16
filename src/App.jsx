@@ -7,6 +7,8 @@ import Plants from "./pages/Plants";
 import Gallery from "./pages/Gallery";
 import Farm from "./pages/Farm";
 import Shop from "./pages/Shop";
+import Journal from "./pages/Journal";
+import BlogPost from "./pages/BlogPost";
 
 const metadata = {
   "/": ["Hasiru Haadi — Garden, Farm & Green Living", "Explore Hasiru Haadi, a green world built by two sisters, with a backyard vegetable garden, plants, family farm, village stories and a nature-inspired shop."],
@@ -15,13 +17,14 @@ const metadata = {
   "/plants": ["My Plants | Hasiru Haadi", "Follow a personal plant journey, discover plant moments and explore the Hasiru Haadi plant watering tracker."],
   "/gallery": ["Gallery | Hasiru Haadi", "Browse photographs and everyday moments from the gardens, farm, plants and village life of Hasiru Haadi."],
   "/farm": ["Our Farm | Hasiru Haadi", "Learn about the Hasiru Haadi family farm, its coconut and areca trees, seasonal crops and irrigation."],
-  "/shop": ["Hasiru Haadi Shop", "Visit the Hasiru Haadi marketplace, a small sister-led venture inspired by plants, nature and thoughtful living."]
+  "/shop": ["Hasiru Haadi Shop", "Visit the Hasiru Haadi marketplace, a small sister-led venture inspired by plants, nature and thoughtful living."],
+  "/journal": ["Journal | Hasiru Haadi", "Stories rooted in nature — village memories, garden adventures, farm life and a personal green journey."]
 };
 
 function RouteMetadata() {
   const { pathname } = useLocation();
   useEffect(() => {
-    const [title, description] = metadata[pathname] || metadata["/"];
+    const [title, description] = metadata[pathname] || ["Hasiru Haadi Journal", "Stories rooted in nature from Hasiru Haadi."];
     document.title = title;
     let tag = document.querySelector('meta[name="description"]');
     if (!tag) {
@@ -42,17 +45,22 @@ function RouteMetadata() {
 }
 
 function App() {
-  return <BrowserRouter>
-    <RouteMetadata />
-    <Routes>
-      <Route path="/" element={<WorldMap />} />
-      <Route path="/garden" element={<Garden />} />
-      <Route path="/village" element={<Village />} />
-      <Route path="/plants" element={<Plants />} />
-      <Route path="/gallery" element={<Gallery />} />
-      <Route path="/farm" element={<Farm />} />
-      <Route path="/shop" element={<Shop />} />
-    </Routes>
-  </BrowserRouter>;
+  return (
+    <BrowserRouter>
+      <RouteMetadata />
+      <Routes>
+        <Route path="/" element={<WorldMap />} />
+        <Route path="/garden" element={<Garden />} />
+        <Route path="/village" element={<Village />} />
+        <Route path="/plants" element={<Plants />} />
+        <Route path="/gallery" element={<Gallery />} />
+        <Route path="/farm" element={<Farm />} />
+        <Route path="/shop" element={<Shop />} />
+        <Route path="/journal" element={<Journal />} />
+        <Route path="/journal/:slug" element={<BlogPost />} />
+      </Routes>
+    </BrowserRouter>
+  );
 }
+
 export default App;
