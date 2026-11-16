@@ -124,3 +124,23 @@
     font-size: 2rem;
   }
 }
+
+/* Responsive layout refinements */
+@media (max-width: 768px) {
+  .village-page { padding: 76px 18px 40px; }
+  .village-hero { margin-bottom: 52px; }
+  .village-hero img { max-height: 300px; }
+  .village-story, .village-photos { margin-bottom: 52px; }
+  .village-story p { font-size: 1.08rem; }
+  .photo-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+  .photo-grid img { height: 180px; }
+}
+@media (max-width: 420px) {
+  .village-page { padding: 72px 14px 32px; }
+  .village-hero img { max-height: 230px; border-radius: 16px; }
+  .village-hero h1 { font-size: 1.85rem; }
+  .village-subtitle { font-size: 1rem; }
+  .village-photos h2 { font-size: 1.4rem; }
+  .photo-grid { gap: 10px; }
+  .photo-grid img { height: 145px; border-radius: 12px; }
+}

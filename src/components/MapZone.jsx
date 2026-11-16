@@ -1,31 +1,22 @@
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 
 export default function MapZone({ label, position, route, icon, featured, delay = 0 }) {
   const navigate = useNavigate();
-
-  const handleActivate = () => navigate(route);
-  const handleKeyDown = (e) => {
-    if (e.key === "Enter" || e.key === " ") {
-      e.preventDefault();
-      navigate(route);
-    }
-  };
+  const reduceMotion = useReducedMotion();
 
   return (
-    <div
+    <button
+      type="button"
       className={`map-zone ${featured ? "featured" : ""}`}
       style={{ top: position.top, left: position.left }}
-      onClick={handleActivate}
-      onKeyDown={handleKeyDown}
-      tabIndex={0}
-      role="button"
-      aria-label={`Go to ${label}`}
+      onClick={() => navigate(route)}
+      aria-label={`Explore ${label}`}
     >
       <motion.div
         className="zone-inner"
-        initial={{ opacity: 0, scale: 0.6, y: 10 }}
-        animate={{ opacity: 1, scale: 1, y: [0, -8, 0] }}
+        initial={reduceMotion ? false : { opacity: 0, scale: 0.6, y: 10 }}
+        animate={reduceMotion ? { opacity: 1, scale: 1 } : { opacity: 1, scale: 1, y: [0, -8, 0] }}
         transition={{
           opacity: { duration: 0.5, delay },
           scale: { duration: 0.5, delay },
@@ -37,6 +28,6 @@ export default function MapZone({ label, position, route, icon, featured, delay 
         </div>
         <span>{label}</span>
       </motion.div>
-    </div>
+    </button>
   );
 }

@@ -18,6 +18,9 @@ export default function Shop() {
         <img
           src={heroImg}
           alt="Hasiru Haadi Shop"
+          loading="eager"
+          fetchPriority="high"
+          decoding="async"
         />
         <h1>Hasiru Haadi Shop</h1>
         <p className="shop-subtitle">
@@ -61,26 +64,31 @@ export default function Shop() {
         <div className="photo-grid">
           <img
             loading="lazy"
+            decoding="async"
             src={img1}
             alt="Shop moment"
           />
           <img
             loading="lazy"
+            decoding="async"
             src={img2}
             alt="Shop moment"
           />
           <img
             loading="lazy"
+            decoding="async"
             src={img3}
             alt="Shop moment"
           />
           <img
             loading="lazy"
+            decoding="async"
             src={img4}
             alt="Shop moment"
           />
           <img
             loading="lazy"
+            decoding="async"
             src={img5}
             alt="Shop moment"
           />

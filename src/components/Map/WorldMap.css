@@ -201,3 +201,49 @@
     font-size: 0.72rem;
   }
 }
+
+/* Keep map zones comfortably spaced on phones */
+@media (max-width: 600px) {
+  .map-header { top: 18px; }
+  .map-path { top: 43%; height: 220px; }
+  .world-map > .map-zone:nth-child(3) { top: 34% !important; left: 22% !important; }
+  .world-map > .map-zone:nth-child(4) { top: 34% !important; left: 78% !important; }
+  .world-map > .map-zone:nth-child(5) { top: 53% !important; left: 50% !important; }
+  .world-map > .map-zone:nth-child(6) { top: 69% !important; left: 22% !important; }
+  .world-map > .map-zone:nth-child(7) { top: 69% !important; left: 78% !important; }
+  .world-map > .map-zone:nth-child(8) { top: 84% !important; left: 50% !important; }
+  .explore-hint { bottom: 12px; font-size: .72rem; }
+}
+@media (max-width: 380px) {
+  .map-title { font-size: 1.6rem; }
+  .map-zone span { font-size: .68rem; }
+  .zone-icon { width: 46px; height: 46px; }
+  .zone-icon img { width: 28px; height: 28px; }
+  .world-map > .map-zone:nth-child(3) { left: 20% !important; }
+  .world-map > .map-zone:nth-child(4) { left: 80% !important; }
+  .world-map > .map-zone:nth-child(6) { left: 20% !important; }
+  .world-map > .map-zone:nth-child(7) { left: 80% !important; }
+}
+
+
+/* Reset native button styling while preserving a real keyboard-accessible control. */
+.map-zone {
+  appearance: none;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  border-radius: 0;
+  box-shadow: none;
+  line-height: normal;
+}
+.map-zone:hover {
+  box-shadow: none;
+}
+.map-zone:focus-visible {
+  outline: 3px solid #1b4332;
+  outline-offset: 8px;
+  border-radius: 12px;
+}

@@ -16,7 +16,7 @@ export default function Farm() {
 
       {/* Hero */}
       <section className="farm-hero fade-in">
-        <img loading="lazy" src={heroImg} alt="Our farm" />
+        <img src={heroImg} alt="Our farm" loading="eager" fetchPriority="high" decoding="async" />
         <h1>Our Farm</h1>
         <p className="farm-subtitle">
           Rooted in tradition, growing with care.
@@ -57,11 +57,11 @@ export default function Farm() {
         <h2>Farm Moments</h2>
 
         <div className="photo-grid">
-          <img src={farm2} alt="Coconut trees in our farm" />
-          <img src={farm3} alt="Areca nut trees growing" />
-          <img src={farm1} alt="Raagi crop in the field" />
-          <img src={farm4} alt="Drip irrigation system" />
-          <img src={farm5} alt="Farm view" />
+          <img loading="lazy" decoding="async" src={farm2} alt="Coconut trees in our farm" />
+          <img loading="lazy" decoding="async" src={farm3} alt="Areca nut trees growing" />
+          <img loading="lazy" decoding="async" src={farm1} alt="Raagi crop in the field" />
+          <img loading="lazy" decoding="async" src={farm4} alt="Drip irrigation system" />
+          <img loading="lazy" decoding="async" src={farm5} alt="Farm view" />
         </div>
       </section>
 

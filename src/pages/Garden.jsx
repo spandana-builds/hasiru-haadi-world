@@ -14,7 +14,7 @@ export default function Garden() {
 
       {/* Hero */}
       <section className="garden-hero fade-in">
-        <img loading="lazy" src={heroImg} alt="Harvested peas in hand at sunset" />
+        <img src={heroImg} alt="Harvested peas in hand at sunset" loading="eager" fetchPriority="high" decoding="async" />
         <h1>Our Garden</h1>
         <p className="garden-subtitle">
           A small backyard where patience turns into food.
@@ -62,10 +62,10 @@ export default function Garden() {
         <h2>Garden Moments</h2>
 
         <div className="photo-grid">
-          <img loading="lazy" src={bedImg} alt="Garden bed with coconut husk boundary" />
-          <img loading="lazy" src={trellisImg} alt="Ridge gourd growing on trellis" />
-          <img loading="lazy" src={harvestImg} alt="Freshly harvested radish" />
-          <img loading="lazy" src={methiImg} alt="Fresh methi harvest" />
+          <img loading="lazy" decoding="async" src={bedImg} alt="Garden bed with coconut husk boundary" />
+          <img loading="lazy" decoding="async" src={trellisImg} alt="Ridge gourd growing on trellis" />
+          <img loading="lazy" decoding="async" src={harvestImg} alt="Freshly harvested radish" />
+          <img loading="lazy" decoding="async" src={methiImg} alt="Fresh methi harvest" />
         </div>
       </section>
 

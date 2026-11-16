@@ -245,3 +245,28 @@
     display: none;   /* hides connector lines when stages wrap */
   }
 }
+
+/* Responsive layout refinements */
+@media (max-width: 768px) {
+  .garden-page { padding: 76px 18px 40px; }
+  .garden-hero { margin-bottom: 52px; }
+  .garden-hero img { max-height: 300px; }
+  .garden-story, .garden-photos, .garden-grow, .garden-stages { margin-bottom: 52px; }
+  .garden-story p { font-size: 1.08rem; }
+  .photo-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+  .photo-grid img { height: 180px; }
+}
+@media (max-width: 420px) {
+  .garden-page { padding: 72px 14px 32px; }
+  .garden-hero img { max-height: 230px; border-radius: 16px; }
+  .garden-hero h1 { font-size: 1.85rem; }
+  .garden-subtitle { font-size: 1rem; }
+  .garden-story h2, .garden-photos h2, .garden-grow h2, .garden-stages h2 { font-size: 1.4rem; }
+  .photo-grid { gap: 10px; }
+  .photo-grid img { height: 145px; border-radius: 12px; }
+  .garden-stats { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+  .stat-card { padding: 16px 10px; }
+  .stat-number { font-size: 1.7rem; }
+  .grow-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+  .grow-card { font-size: .95rem; padding: 14px 8px; }
+}

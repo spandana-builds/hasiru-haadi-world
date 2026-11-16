@@ -130,3 +130,25 @@
   to { opacity: 1; }
 }
 
+
+
+/* Native button reset for accessible gallery controls; visual layout is unchanged. */
+.gallery-item {
+  appearance: none;
+  display: block;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  text-align: inherit;
+  cursor: zoom-in;
+}
+.gallery-item:hover {
+  background: transparent;
+}
+.gallery-item:focus-visible {
+  outline: 3px solid #d08c35;
+  outline-offset: 4px;
+}
