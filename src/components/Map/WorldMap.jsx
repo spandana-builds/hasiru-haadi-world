@@ -53,10 +53,10 @@ export default function WorldMap() {
       <MapZone label="Gallery" route="/gallery" icon={galleryIcon} position={{ top: "24%", left: "20%" }} delay={0} />
       <MapZone label="Shop" route="/shop" icon={shopIcon} position={{ top: "24%", left: "80%" }} delay={0.1} />
       <MapZone label="Village" route="/village" icon={villageIcon} position={{ top: "42%", left: "50%" }} delay={0.2} featured />
-      <MapZone label="Garden" route="/garden" icon={gardenIcon} position={{ top: "64%", left: "20%" }} delay={0.3} />
-      <MapZone label="Farm" route="/farm" icon={farmIcon} position={{ top: "64%", left: "80%" }} delay={0.4} />
-      <MapZone label="Plants" route="/plants" icon={plantsIcon} position={{ top: "78%", left: "50%" }} delay={0.5} />
-      <MapZone label="Journal" route="/journal" icon={journalIcon} position={{ top: "55%", left: "66%" }} delay={0.6} />
+      <MapZone label="Garden" route="/garden" icon={gardenIcon} position={{ top: "64%", left: "13%" }} delay={0.3} />
+      <MapZone label="Farm" route="/farm" icon={farmIcon} position={{ top: "78%", left: "92%" }} delay={0.4} />
+      <MapZone label="Plants" route="/plants" icon={plantsIcon} position={{ top: "78%", left: "40%" }} delay={0.5} />
+      <MapZone label="Journal" route="/journal" icon={journalIcon} position={{ top: "59%", left: "70%" }} delay={0.6} />
 
       {/* Explore hint */}
       <div className="explore-hint" aria-hidden="true">
