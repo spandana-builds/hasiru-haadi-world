@@ -5,21 +5,12 @@ export default function MapZone({ label, position, route, icon, featured, delay 
   const navigate = useNavigate();
   const reduceMotion = useReducedMotion();
 
-  const handleKeyDown = (event) => {
-    if (event.key === "Enter" || event.key === " ") {
-      event.preventDefault();
-      navigate(route);
-    }
-  };
-
   return (
-    <div
+    <button
+      type="button"
       className={`map-zone ${featured ? "featured" : ""}`}
       style={{ top: position.top, left: position.left }}
       onClick={() => navigate(route)}
-      onKeyDown={handleKeyDown}
-      tabIndex={0}
-      role="button"
       aria-label={`Explore ${label}`}
     >
       <motion.div
@@ -37,6 +28,6 @@ export default function MapZone({ label, position, route, icon, featured, delay 
         </div>
         <span>{label}</span>
       </motion.div>
-    </div>
+    </button>
   );
 }
