@@ -54,7 +54,7 @@ export default function WorldMap() {
       <MapZone label="Shop" route="/shop" icon={shopIcon} position={{ top: "31%", left: "84%" }} delay={0.1} />
       <MapZone label="Village" route="/village" icon={villageIcon} position={{ top: "39%", left: "48%" }} delay={0.2} featured />
       <MapZone label="Garden" route="/garden" icon={gardenIcon} position={{ top: "58%", left: "12%" }} delay={0.3} />
-      <MapZone label="Farm" route="/farm" icon={farmIcon} position={{ top: "56%", left: "83%" }} delay={0.4} />
+      <MapZone label="Farm" route="/farm" icon={farmIcon} position={{ top: "49%", left: "83%" }} delay={0.4} />
       <MapZone label="Plants" route="/plants" icon={plantsIcon} position={{ top: "76%", left: "37%" }} delay={0.5} />
       <MapZone label="Journal" route="/journal" icon={journalIcon} position={{ top: "47%", left: "67%" }} delay={0.6} />
 
