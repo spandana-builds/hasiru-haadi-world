@@ -14,7 +14,7 @@ const stories = [
     excerpt: "A story of two sisters, eight garden beds and the joy of growing something with our own hands.",
     image: gardenHero,
     imageAlt: "Hasiru Haadi backyard vegetable garden",
-    to: "/garden",
+    to: "/journal/garden-we-built",
     readTime: "Garden",
   },
   {
@@ -23,7 +23,7 @@ const stories = [
     excerpt: "It began with a few reused containers, a terrace and the excitement of watching a new leaf appear.",
     image: plantsHero,
     imageAlt: "Potted plants from the Hasiru Haadi collection",
-    to: "/plants",
+    to: "/journal/my-green-journey",
     readTime: "Plants",
   },
   {
@@ -32,7 +32,7 @@ const stories = [
     excerpt: "A little about our family farm, the trees we nurture and the care behind every new sapling.",
     image: farmHero,
     imageAlt: "Family farm at Hasiru Haadi",
-    to: "/farm",
+    to: "/journal/our-farm",
     readTime: "Farm",
   },
   {
@@ -41,7 +41,7 @@ const stories = [
     excerpt: "Quiet roads, green fields, familiar faces and the little things that make a place feel like home.",
     image: villageHero,
     imageAlt: "Yerigenahalli village at dusk",
-    to: "/village",
+    to: "/journal/yerigenahalli",
     readTime: "Village",
   },
 ];
@@ -107,7 +107,7 @@ export default function Journal() {
           </div>
           <span className="journal-index">01 / FEATURED</span>
         </div>
-        <Link to="/village" className="journal-feature-link">
+        <Link to="/journal/yerigenahalli" className="journal-feature-link">
           <img src={villageHero} alt="Yerigenahalli village at dusk" className="journal-feature-image" />
           <div className="journal-feature-copy">
             <p className="journal-eyebrow">VILLAGE CHRONICLES</p>
