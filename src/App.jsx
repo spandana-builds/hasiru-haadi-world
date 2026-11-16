@@ -7,13 +7,13 @@ import Plants from "./pages/Plants";
 import Gallery from "./pages/Gallery";
 import Farm from "./pages/Farm";
 import Shop from "./pages/Shop";
+import Journal from "./pages/Journal";
 import { useEffect } from "react";
-
 
 function App() {
   useEffect(() => {
-  document.title = "Hasiru Haadi — Garden, Farm & Green Living";
-}, []);
+    document.title = "Hasiru Haadi — Stories Rooted in Nature";
+  }, []);
 
   return (
     <BrowserRouter>
@@ -25,6 +25,7 @@ function App() {
         <Route path="/gallery" element={<Gallery />} />
         <Route path="/farm" element={<Farm />} />
         <Route path="/shop" element={<Shop />} />
+        <Route path="/journal" element={<Journal />} />
       </Routes>
     </BrowserRouter>
   );
