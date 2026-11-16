@@ -224,3 +224,26 @@
   .world-map > .map-zone:nth-child(6) { left: 20% !important; }
   .world-map > .map-zone:nth-child(7) { left: 80% !important; }
 }
+
+
+/* Reset native button styling while preserving a real keyboard-accessible control. */
+.map-zone {
+  appearance: none;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  border-radius: 0;
+  box-shadow: none;
+  line-height: normal;
+}
+.map-zone:hover {
+  box-shadow: none;
+}
+.map-zone:focus-visible {
+  outline: 3px solid #1b4332;
+  outline-offset: 8px;
+  border-radius: 12px;
+}
