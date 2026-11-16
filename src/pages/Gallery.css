@@ -1,30 +1,118 @@
 @import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;600&display=swap');
 
-.gallery-page { min-height: 100vh; padding: 90px 32px 60px; background: linear-gradient(to bottom, #f1faee, #ffffff); color: #1b4332; font-family: "Plus Jakarta Sans", "Poppins", sans-serif; box-sizing: border-box; }
-.gallery-header { max-width: 1200px; margin: 0 auto 50px; text-align: center; }
+.gallery-page {
+  min-height: 100vh;
+  padding: 90px 32px 60px;
+  background: linear-gradient(to bottom, #f1faee, #ffffff);
+  color: #1b4332;
+  font-family: "Plus Jakarta Sans", "Poppins", sans-serif;
+  box-sizing: border-box;
+}
+
+.gallery-header {
+  max-width: 1200px;
+  margin: 0 auto 50px;
+  text-align: center;
+}
+
 .gallery-header h1 { font-size: 2.6rem; color: #344e41; }
 .gallery-header p { margin-top: 0; font-size: 1.05rem; color: #344e41; opacity: .9; }
-.gallery-grid { display: flex; flex-wrap: wrap; gap: 16px; max-width: 1400px; margin: 0 auto; }
+
+/* Masonry-style columns preserve each photo's original aspect ratio. */
+.gallery-grid {
+  columns: 4 220px;
+  column-gap: 16px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
 .gallery-item {
-  flex: 1 1 220px;
-  height: 260px;
-  min-width: 0;
-  overflow: hidden;
-  border-radius: 16px;
-  position: relative;
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0 0 16px;
   padding: 0;
   border: 0;
+  border-radius: 16px;
+  overflow: hidden;
+  break-inside: avoid;
   background: transparent;
   box-shadow: 0 6px 18px rgba(0,0,0,.12);
   cursor: zoom-in;
   transition: transform .3s ease, box-shadow .3s ease;
 }
-.gallery-item img { height: 100%; width: 100%; object-fit: cover; display: block; }
-.gallery-item:hover { transform: translateY(-4px); box-shadow: 0 14px 30px rgba(0,0,0,.18); }
-.gallery-footer { text-align: center; margin-top: 50px; font-style: italic; font-size: 1.05rem; opacity: .8; }
-@media (max-width: 600px) { .gallery-page { padding: 76px 16px 40px; } .gallery-item { flex-basis: 145px; height: 200px; } }
-.lightbox { position: fixed; inset: 0; background: rgba(18,28,24,.92); display: flex; align-items: center; justify-content: center; z-index: 999; cursor: zoom-out; animation: fadeIn .3s ease; }
-.lightbox img { max-width: 92vw; max-height: 92vh; object-fit: contain; border-radius: 12px; box-shadow: 0 24px 60px rgba(0,0,0,.6); }
-.lightbox-close { position: absolute; top: 24px; right: 28px; font-size: 2rem; color: #e9f5ef; cursor: pointer; opacity: .85; background: none; border: none; padding: 0; line-height: 1; font-family: inherit; box-shadow: none; }
+
+.gallery-item img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.gallery-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 30px rgba(0,0,0,.18);
+}
+
+.gallery-footer {
+  text-align: center;
+  margin-top: 50px;
+  font-style: italic;
+  font-size: 1.05rem;
+  opacity: .8;
+}
+
+@media (max-width: 900px) {
+  .gallery-grid { columns: 3 180px; }
+}
+
+@media (max-width: 600px) {
+  .gallery-page { padding: 76px 16px 40px; }
+  .gallery-grid { columns: 2 130px; column-gap: 12px; }
+  .gallery-item { margin-bottom: 12px; border-radius: 12px; }
+}
+
+@media (max-width: 360px) {
+  .gallery-grid { columns: 1; }
+}
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(18,28,24,.92);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+  cursor: zoom-out;
+  animation: fadeIn .3s ease;
+}
+
+.lightbox img {
+  max-width: 92vw;
+  max-height: 92vh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border-radius: 12px;
+  box-shadow: 0 24px 60px rgba(0,0,0,.6);
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 24px;
+  right: 28px;
+  font-size: 2rem;
+  color: #e9f5ef;
+  cursor: pointer;
+  opacity: .85;
+  background: none;
+  border: none;
+  padding: 0;
+  line-height: 1;
+  font-family: inherit;
+  box-shadow: none;
+}
+
 .lightbox-close:hover { opacity: 1; transform: none; box-shadow: none; }
 @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
