@@ -2,15 +2,12 @@ import { useEffect, useState } from "react";
 import "./Gallery.css";
 import BackToMap from "../components/BackToMap";
 
-// ✅ Correct Vite glob (relative to THIS file)
 const imageModules = import.meta.glob(
   "../assets/gallery/*.{jpg,jpeg,png,webp}",
   { eager: true }
 );
 
-const images = Object.values(imageModules).map(
-  (mod) => mod.default
-);
+const images = Object.values(imageModules).map((mod) => mod.default);
 
 export default function Gallery() {
   const [activeImage, setActiveImage] = useState(null);
@@ -18,8 +15,8 @@ export default function Gallery() {
   useEffect(() => {
     if (!activeImage) return;
 
-    const handleKeyDown = (e) => {
-      if (e.key === "Escape") setActiveImage(null);
+    const handleKeyDown = (event) => {
+      if (event.key === "Escape") setActiveImage(null);
     };
 
     window.addEventListener("keydown", handleKeyDown);
@@ -27,44 +24,43 @@ export default function Gallery() {
   }, [activeImage]);
 
   return (
-    <div className="gallery-page">
+    <main className="gallery-page">
       <BackToMap />
 
-      {/* Header */}
       <header className="gallery-header">
         <h1>Gallery</h1>
         <p>Moments collected slowly, without noise.</p>
       </header>
 
-      {/* Grid */}
       {images.length === 0 ? (
-        <p className="gallery-empty">
+        <p className="gallery-empty" role="status">
           No images found. Check the gallery folder.
         </p>
       ) : (
-        <section className="gallery-grid">
+        <section className="gallery-grid" aria-label="Photo gallery">
           {images.map((src, index) => (
-            <div
+            <button
+              type="button"
               className="gallery-item"
-              key={index}
+              key={src}
               onClick={() => setActiveImage(src)}
+              aria-label={`Open gallery image ${index + 1}`}
             >
               <img
                 src={src}
-                alt={`Gallery ${index + 1}`}
+                alt={`Hasiru Haadi gallery photograph ${index + 1}`}
                 loading="lazy"
+                decoding="async"
               />
-            </div>
+            </button>
           ))}
         </section>
       )}
 
-      {/* Footer */}
       <footer className="gallery-footer">
         Some moments don’t need captions.
       </footer>
 
-      {/* Fullscreen viewer */}
       {activeImage && (
         <div
           className="lightbox"
@@ -76,19 +72,19 @@ export default function Gallery() {
           <button
             type="button"
             className="lightbox-close"
-            aria-label="Close preview"
+            aria-label="Close image preview"
             onClick={() => setActiveImage(null)}
             autoFocus
           >
-            ✕
+            <span aria-hidden="true">✕</span>
           </button>
           <img
             src={activeImage}
-            alt="Full view"
-            onClick={(e) => e.stopPropagation()}
+            alt="Selected photograph enlarged"
+            onClick={(event) => event.stopPropagation()}
           />
         </div>
       )}
-    </div>
+    </main>
   );
 }
