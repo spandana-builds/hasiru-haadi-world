@@ -15,7 +15,7 @@ export default function Village() {
 
       {/* Hero */}
       <section className="village-hero fade-in">
-        <img loading="lazy" src={heroImg} alt="Yerigenahalli village at dusk" />
+        <img src={heroImg} alt="Yerigenahalli village at dusk" loading="eager" fetchPriority="high" decoding="async" />
         <h1>Yerigenahalli</h1>
         <p className="village-subtitle">
           Where life moves with the land, light, and people.
@@ -62,11 +62,11 @@ export default function Village() {
         <h2>Village Moments</h2>
 
         <div className="photo-grid">
-          <img src={field1} alt="Cultivated crop fields" />
-          <img src={field2} alt="Farming work and tractor" />
-          <img src={lifeImg} alt="Cows and calves in the village" />
-          <img src={skyImg} alt="Village sunset sky" />
-          <img src={detailImg} alt="Quiet village water body" />
+          <img loading="lazy" decoding="async" src={field1} alt="Cultivated crop fields" />
+          <img loading="lazy" decoding="async" src={field2} alt="Farming work and tractor" />
+          <img loading="lazy" decoding="async" src={lifeImg alt="Cows and calves in the village" />
+          <img loading="lazy" decoding="async" src={skyImg alt="Village sunset sky" />
+          <img loading="lazy" decoding="async" src={detailImg alt="Quiet village water body" />
         </div>
       </section>
 
