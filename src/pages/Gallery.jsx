@@ -42,7 +42,7 @@ export default function Gallery() {
               onClick={() => setActiveImage(src)}
               aria-label={`Open gallery image ${index + 1}`}
             >
-              <img src={src} alt={`Hasiru Haadi gallery moment ${index + 1}`} loading="lazy" decoding="async" />
+              <img src={src} alt={`Hasiru Haadi gallery moment ${index + 1}`} loading="lazy" decoding="async" onLoad={(event) => { const img = event.currentTarget; const tile = img.parentElement; tile.classList.toggle("gallery-item--landscape", img.naturalWidth > img.naturalHeight * 1.1); }} />
             </button>
           ))}
         </section>
