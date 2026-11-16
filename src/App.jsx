@@ -8,6 +8,7 @@ import Gallery from "./pages/Gallery";
 import Farm from "./pages/Farm";
 import Shop from "./pages/Shop";
 import Journal from "./pages/Journal";
+import BlogPost from "./pages/BlogPost";
 import { useEffect } from "react";
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
         <Route path="/farm" element={<Farm />} />
         <Route path="/shop" element={<Shop />} />
         <Route path="/journal" element={<Journal />} />
+        <Route path="/journal/:slug" element={<BlogPost />} />
       </Routes>
     </BrowserRouter>
   );
