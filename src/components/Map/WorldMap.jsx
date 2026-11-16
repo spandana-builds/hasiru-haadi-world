@@ -56,7 +56,7 @@ export default function WorldMap() {
       <MapZone label="Garden" route="/garden" icon={gardenIcon} position={{ top: "61%", left: "13%" }} delay={0.3} />
       <MapZone label="Farm" route="/farm" icon={farmIcon} position={{ top: "55%", left: "76%" }} delay={0.4} />
       <MapZone label="Plants" route="/plants" icon={plantsIcon} position={{ top: "73%", left: "38%" }} delay={0.5} />
-      <MapZone label="Journal" route="/journal" icon={journalIcon} position={{ top: "72%", left: "69%" }} delay={0.6} />
+      <MapZone label="Journal" route="/journal" icon={journalIcon} position={{ top: "82%", left: "88%" }} delay={0.6} />
 
       {/* Explore hint */}
       <div className="explore-hint" aria-hidden="true">
