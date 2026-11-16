@@ -2,22 +2,26 @@ import { useEffect, useState } from "react";
 import "./Gallery.css";
 import BackToMap from "../components/BackToMap";
 
-const imageModules = import.meta.glob("../assets/gallery/*.{jpg,jpeg,png,webp}", {
-  eager: true,
-  query: "?url",
-  import: "default",
-});
+// ✅ Correct Vite glob (relative to THIS file)
+const imageModules = import.meta.glob(
+  "../assets/gallery/*.{jpg,jpeg,png,webp}",
+  { eager: true }
+);
 
-const images = Object.values(imageModules);
+const images = Object.values(imageModules).map(
+  (mod) => mod.default
+);
 
 export default function Gallery() {
   const [activeImage, setActiveImage] = useState(null);
 
   useEffect(() => {
-    if (!activeImage) return undefined;
-    const handleKeyDown = (event) => {
-      if (event.key === "Escape") setActiveImage(null);
+    if (!activeImage) return;
+
+    const handleKeyDown = (e) => {
+      if (e.key === "Escape") setActiveImage(null);
     };
+
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
   }, [activeImage]);
@@ -25,31 +29,42 @@ export default function Gallery() {
   return (
     <div className="gallery-page">
       <BackToMap />
+
+      {/* Header */}
       <header className="gallery-header">
         <h1>Gallery</h1>
         <p>Moments collected slowly, without noise.</p>
       </header>
 
+      {/* Grid */}
       {images.length === 0 ? (
-        <p className="gallery-empty">No images found. Check the gallery folder.</p>
+        <p className="gallery-empty">
+          No images found. Check the gallery folder.
+        </p>
       ) : (
-        <section className="gallery-grid" aria-label="Photo gallery">
+        <section className="gallery-grid">
           {images.map((src, index) => (
-            <button
+            <div
               className="gallery-item"
-              type="button"
-              key={src}
+              key={index}
               onClick={() => setActiveImage(src)}
-              aria-label={`Open gallery image ${index + 1}`}
             >
-              <img src={src} alt={`Hasiru Haadi gallery moment ${index + 1}`} loading="lazy" decoding="async" onLoad={(event) => { const img = event.currentTarget; const tile = img.parentElement; tile.classList.toggle("gallery-item--landscape", img.naturalWidth > img.naturalHeight * 1.1); }} />
-            </button>
+              <img
+                src={src}
+                alt={`Gallery ${index + 1}`}
+                loading="lazy"
+              />
+            </div>
           ))}
         </section>
       )}
 
-      <footer className="gallery-footer">Some moments don’t need captions.</footer>
+      {/* Footer */}
+      <footer className="gallery-footer">
+        Some moments don’t need captions.
+      </footer>
 
+      {/* Fullscreen viewer */}
       {activeImage && (
         <div
           className="lightbox"
@@ -61,13 +76,17 @@ export default function Gallery() {
           <button
             type="button"
             className="lightbox-close"
-            aria-label="Close image preview"
+            aria-label="Close preview"
             onClick={() => setActiveImage(null)}
             autoFocus
           >
             ✕
           </button>
-          <img src={activeImage} alt="Expanded view of a Hasiru Haadi gallery photo" onClick={(event) => event.stopPropagation()} />
+          <img
+            src={activeImage}
+            alt="Full view"
+            onClick={(e) => e.stopPropagation()}
+          />
         </div>
       )}
     </div>
