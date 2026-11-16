@@ -29,7 +29,7 @@ export default function Plants() {
     <div className="plants-page">
       <BackToMap />
       <section className="plants-hero fade-in">
-        <img src={heroImg} alt="Potted plants from the Hasiru Haadi collection" fetchPriority="high" />
+        <img src={heroImg} alt="Potted plants from the Hasiru Haadi collection" loading="eager" fetchPriority="high" decoding="async" />
         <h1>My Plants</h1>
         <p className="plants-subtitle">Where curiosity slowly turned into companionship.</p>
       </section>
