@@ -201,7 +201,14 @@ export default function MediaLibrary() {
           <div className="admin-storage-help-content">
             <p>Create a <strong>public</strong> Supabase Storage bucket named <code>{BUCKET}</code> and set its file size limit to 10 MB. Public means visitors can view image URLs; uploads and deletes remain restricted by the policies below.</p>
             <p>In Supabase → SQL Editor, replace <code>YOUR_ADMIN_EMAIL</code> in this SQL with the exact email used for your admin login, then run it:</p>
-            <pre>{`create policy "Hasiru Haadi admin can upload media"
+            <pre>{`create policy "Hasiru Haadi admin can view media list"
+on storage.objects for select to authenticated
+using (
+  bucket_id = 'hasiru-haadi-media'
+  and lower(auth.jwt() ->> 'email') = lower('YOUR_ADMIN_EMAIL')
+);
+
+create policy "Hasiru Haadi admin can upload media"
 on storage.objects for insert to authenticated
 with check (
   bucket_id = '${BUCKET}'
