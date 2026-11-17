@@ -6,7 +6,6 @@ const sections = [
   { number: "01", title: "Page content", description: "Manage text and images across your website.", status: "Coming next" },
   { number: "02", title: "Journal", description: "Create, edit, publish and remove stories.", status: "Coming next" },
   { number: "03", title: "Shop", description: "Manage products, photos and prices.", status: "Coming next" },
-  { number: "04", title: "Media library", description: "Organise the images used across Hasiru Haadi.", status: "Coming next" },
 ];
 
 export default function AdminDashboard() {
@@ -29,6 +28,7 @@ export default function AdminDashboard() {
       </section>
       <section className="admin-section-grid" aria-label="Admin tools">
         {sections.map((section) => <article className="admin-tool-card" key={section.number}><span className="admin-tool-number">{section.number}</span><h2>{section.title}</h2><p>{section.description}</p><span className="admin-tool-status">{section.status}</span></article>)}
+        <button type="button" className="admin-tool-card admin-tool-card-link" onClick={() => navigate("/admin/media")}><span className="admin-tool-number">04</span><h2>Media library</h2><p>Upload, preview, organise and remove images used across Hasiru Haadi.</p><span className="admin-tool-status">Open media library →</span></button>
       </section>
       <p className="admin-dashboard-note">Your existing public website remains unchanged while we build these tools.</p>
     </main>
