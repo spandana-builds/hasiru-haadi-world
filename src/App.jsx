@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { useEffect } from "react";
 import WorldMap from "./components/Map/WorldMap";
-
 import Garden from "./pages/Garden";
 import Village from "./pages/Village";
 import Plants from "./pages/Plants";
@@ -9,7 +9,9 @@ import Farm from "./pages/Farm";
 import Shop from "./pages/Shop";
 import Journal from "./pages/Journal";
 import BlogPost from "./pages/BlogPost";
-import { useEffect } from "react";
+import AdminLogin from "./admin/AdminLogin";
+import AdminDashboard from "./admin/AdminDashboard";
+import AdminRoute from "./admin/AdminRoute";
 
 function App() {
   useEffect(() => {
@@ -28,6 +30,8 @@ function App() {
         <Route path="/shop" element={<Shop />} />
         <Route path="/journal" element={<Journal />} />
         <Route path="/journal/:slug" element={<BlogPost />} />
+        <Route path="/admin" element={<AdminLogin />} />
+        <Route path="/admin/dashboard" element={<AdminRoute><AdminDashboard /></AdminRoute>} />
       </Routes>
     </BrowserRouter>
   );
