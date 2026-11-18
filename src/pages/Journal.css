@@ -52,13 +52,13 @@
 .journal-hero {
   position: relative;
   max-width: 1240px;
-  min-height: 610px;
+  min-height: 0;
   margin: 0 auto;
-  padding: clamp(64px, 8vw, 108px) 0 88px;
+  padding: clamp(48px, 5.5vw, 76px) 0 clamp(58px, 6vw, 82px);
   display: grid;
-  grid-template-columns: .92fr 1.08fr;
+  grid-template-columns: .9fr 1.1fr;
   align-items: center;
-  gap: clamp(38px, 7vw, 100px);
+  gap: clamp(34px, 5vw, 72px);
 }
 .journal-hero-copy { position: relative; z-index: 1; padding: 12px 0; }
 .journal-hero-copy .journal-eyebrow,
@@ -108,6 +108,9 @@
 .journal-hero-image-wrap {
   position: relative;
   isolation: isolate;
+  width: 100%;
+  max-width: 660px;
+  justify-self: end;
   padding: 0 10px 14px 0;
 }
 .journal-hero-image-wrap::before {
@@ -132,9 +135,10 @@
 .journal-hero-image {
   display: block;
   width: 100%;
-  height: clamp(360px, 43vw, 540px);
+  height: clamp(340px, 36vw, 470px);
   object-fit: cover;
-  border-radius: 48% 48% 4px 4px;
+  object-position: center;
+  border-radius: 44% 44% 4px 4px;
   box-shadow: 0 22px 55px rgba(48,73,54,.13);
 }
 .journal-image-caption {
@@ -268,7 +272,8 @@
 
 @media (max-width: 900px) {
   .journal-header { padding-left: 130px; }
-  .journal-hero { gap: 34px; grid-template-columns: .95fr 1.05fr; }
+  .journal-hero { gap: 34px; grid-template-columns: .95fr 1.05fr; padding-top: 54px; }
+  .journal-hero-image { height: clamp(330px, 42vw, 410px); }
   .journal-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 @media (max-width: 680px) {
@@ -279,7 +284,7 @@
   .journal-hero { min-height: 0; grid-template-columns: 1fr; gap: 34px; padding: 64px 0 58px; }
   .journal-hero-copy h1 { max-width: 520px; font-size: clamp(3.4rem, 13vw, 5rem); }
   .journal-hero-image-wrap { width: 88%; margin-left: auto; }
-  .journal-hero-image { height: 370px; }
+  .journal-hero-image { height: 340px; }
   .journal-hero-image-wrap::after { right: -14px; }
   .journal-welcome { padding: 48px 8px 54px; }
   .journal-featured, .journal-latest { padding-top: 64px; }
@@ -296,7 +301,7 @@
 @media (max-width: 460px) {
   .journal-grid { grid-template-columns: 1fr; }
   .journal-card-image { aspect-ratio: 3 / 2; }
-  .journal-hero-image { height: 310px; }
+  .journal-hero-image { height: 300px; }
 }
 @media (prefers-reduced-motion: reduce) {
   .journal-page *, .journal-page *::before, .journal-page *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; }
