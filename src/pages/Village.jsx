@@ -18,7 +18,7 @@ export default function Village() {
       {/* Hero */}
       <section className="village-hero fade-in">
         <img loading="lazy" src={pageContent.hero_image_url || heroImg} alt="Yerigenahalli village at dusk" />
-        <h1>Yerigenahalli</h1>
+        <h1>{pageContent.hero_title || "Yerigenahalli"}</h1>
         <p className="village-subtitle">
           {pageContent.hero_subtitle || "Where life moves with the land, light, and people."}
         </p>
