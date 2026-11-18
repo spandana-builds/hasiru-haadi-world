@@ -204,7 +204,8 @@
 .journal-feature-image {
   display: block;
   width: 100%;
-  height: clamp(300px, 38vw, 470px);
+  height: auto;
+  aspect-ratio: 3 / 2;
   object-fit: cover;
 }
 .journal-feature-copy { padding: 12px clamp(4px, 2vw, 26px); }
@@ -283,7 +284,7 @@
   .journal-welcome { padding: 48px 8px 54px; }
   .journal-featured, .journal-latest { padding-top: 64px; }
   .journal-feature-link { grid-template-columns: 1fr; gap: 22px; padding: 12px; }
-  .journal-feature-image { height: 290px; }
+  .journal-feature-image { height: auto; aspect-ratio: 3 / 2; }
   .journal-feature-copy { padding: 8px 6px 14px; }
   .journal-section-heading { align-items: start; }
   .journal-index { max-width: 100px; font-size: .55rem; text-align: right; line-height: 1.5; }
