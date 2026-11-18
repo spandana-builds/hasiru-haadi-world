@@ -11,8 +11,6 @@ const EMPTY = {
   galleryText: "", published: false, isFeatured: false,
 };
 
-const BUCKET = "hasiru-haadi-media";
-
 function fromBlog(blog) {
   return {
     slug: blog.slug, category: blog.category, title: blog.title, excerpt: blog.excerpt,
@@ -165,8 +163,8 @@ export default function JournalManager() {
     if (result.error) {
       setError(result.error.message);
     } else {
-      setNotice(form.published ? "Story saved and published." : "Draft saved.");
       startNew();
+      setNotice(form.published ? "Story saved and published." : "Draft saved.");
       await loadPosts();
     }
     setSaving(false);
