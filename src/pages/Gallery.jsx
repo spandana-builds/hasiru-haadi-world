@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import "./Gallery.css";
 import BackToMap from "../components/BackToMap";
+import usePageContent from "../lib/usePageContent";
 
 // ✅ Correct Vite glob (relative to THIS file)
 const imageModules = import.meta.glob(
@@ -14,6 +15,7 @@ const images = Object.values(imageModules).map(
 
 export default function Gallery() {
   const [activeImage, setActiveImage] = useState(null);
+  const pageContent = usePageContent("gallery");
 
   useEffect(() => {
     if (!activeImage) return;
@@ -32,8 +34,8 @@ export default function Gallery() {
 
       {/* Header */}
       <header className="gallery-header">
-        <h1>Gallery</h1>
-        <p>Moments collected slowly, without noise.</p>
+        <h1>{pageContent.hero_title || "Gallery"}</h1>
+        <p>{pageContent.hero_subtitle || "Moments collected slowly, without noise."}</p>
       </header>
 
       {/* Grid */}
