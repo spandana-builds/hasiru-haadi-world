@@ -17,7 +17,7 @@ export default function Garden() {
       {/* Hero */}
       <section className="garden-hero fade-in">
         <img loading="lazy" src={pageContent.hero_image_url || heroImg} alt="Harvested peas in hand at sunset" />
-        <h1>Our Garden</h1>
+        <h1>{pageContent.hero_title || "Our Garden"}</h1>
         <p className="garden-subtitle">
           {pageContent.hero_subtitle || "A small backyard where patience turns into food."}
         </p>
