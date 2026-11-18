@@ -3,7 +3,7 @@ import { supabase } from "../lib/supabase";
 import "./admin.css";
 
 const sections = [
-  { number: "01", title: "Page content", description: "Manage text and images across your website.", status: "Coming next" },
+  { number: "01", title: "Page content", description: "Manage text and images across your website.", status: "Open Page Content →", path: "/admin/content" },
   { number: "02", title: "Journal", description: "Create, edit, publish and remove stories.", status: "Open Journal →", path: "/admin/journal" },
   { number: "03", title: "Shop", description: "Manage products, photos and prices.", status: "Open Shop →", path: "/admin/shop" },
 ];
