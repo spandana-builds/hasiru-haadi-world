@@ -91,6 +91,9 @@ create policy "Hasiru Haadi admin can delete journal posts"
 on public.journal_posts for delete to authenticated
 using (lower(auth.jwt() ->> 'email') = lower('YOUR_ADMIN_EMAIL'));
 
+grant select on public.journal_posts to anon, authenticated;
+grant insert, update, delete on public.journal_posts to authenticated;
+
 create index if not exists journal_posts_published_created_idx
 on public.journal_posts (published, created_at desc);`;
 
