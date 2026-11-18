@@ -9,7 +9,7 @@ import "./BlogPost.css";
 export default function BlogPost() {
   const { slug } = useParams();
   const [databaseBlog, setDatabaseBlog] = useState(null);
-  const [checked, setChecked] = useState(false);
+  const [checked, setChecked] = useState(false);\n  const [databaseReady, setDatabaseReady] = useState(false);
 
   useEffect(() => {
     let active = true;
@@ -17,11 +17,11 @@ export default function BlogPost() {
     setChecked(false);
     if (!supabase) { setChecked(true); return undefined; }
     supabase.from("journal_posts").select("*").eq("slug", slug).eq("published", true).maybeSingle()
-      .then(({ data }) => { if (active) { setDatabaseBlog(fromDatabasePost(data)); setChecked(true); } });
+      .then(({ data, error }) => { if (active) { setDatabaseReady(!error); setDatabaseBlog(error ? null : fromDatabasePost(data)); setChecked(true); } });
     return () => { active = false; };
   }, [slug]);
 
-  const blog = databaseBlog || getBlogBySlug(slug);
+  const blog = databaseReady ? databaseBlog : getBlogBySlug(slug);
   useEffect(() => {
     document.title = blog ? `${blog.title} | Hasiru Haadi Journal` : "Hasiru Haadi Journal";
     return () => { document.title = "Hasiru Haadi — Stories Rooted in Nature"; };
