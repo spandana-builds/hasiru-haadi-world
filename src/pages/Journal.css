@@ -230,7 +230,7 @@
 .journal-card-image {
   display: block;
   width: 100%;
-  aspect-ratio: 1.12;
+  aspect-ratio: 3 / 2;
   object-fit: cover;
   transition: transform .65s cubic-bezier(.2,.7,.2,1), filter .4s ease;
 }
@@ -294,7 +294,7 @@
 }
 @media (max-width: 460px) {
   .journal-grid { grid-template-columns: 1fr; }
-  .journal-card-image { aspect-ratio: 1.45; }
+  .journal-card-image { aspect-ratio: 3 / 2; }
   .journal-hero-image { height: 310px; }
 }
 @media (prefers-reduced-motion: reduce) {
