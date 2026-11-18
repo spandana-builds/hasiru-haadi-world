@@ -9,7 +9,8 @@ import "./BlogPost.css";
 export default function BlogPost() {
   const { slug } = useParams();
   const [databaseBlog, setDatabaseBlog] = useState(null);
-  const [checked, setChecked] = useState(false);\n  const [databaseReady, setDatabaseReady] = useState(false);
+  const [checked, setChecked] = useState(false);
+  const [databaseReady, setDatabaseReady] = useState(false);
 
   useEffect(() => {
     let active = true;
