@@ -12,6 +12,7 @@ import BlogPost from "./pages/BlogPost";
 import AdminLogin from "./admin/AdminLogin";
 import AdminDashboard from "./admin/AdminDashboard";
 import MediaLibrary from "./admin/MediaLibrary";
+import JournalManager from "./admin/JournalManager";
 import AdminRoute from "./admin/AdminRoute";
 
 function App() {
@@ -34,6 +35,7 @@ function App() {
         <Route path="/admin" element={<AdminLogin />} />
         <Route path="/admin/dashboard" element={<AdminRoute><AdminDashboard /></AdminRoute>} />
         <Route path="/admin/media" element={<AdminRoute><MediaLibrary /></AdminRoute>} />
+        <Route path="/admin/journal" element={<AdminRoute><JournalManager /></AdminRoute>} />
       </Routes>
     </BrowserRouter>
   );
