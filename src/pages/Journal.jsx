@@ -2,6 +2,7 @@ import { useEffect, useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 import BackToMap from "../components/BackToMap";
 import { blogs } from "../data/blogs";
+import usePageContent from "../lib/usePageContent";
 import { supabase } from "../lib/supabase";
 import { fromDatabasePost } from "../lib/journal";
 import "./Journal.css";
@@ -15,6 +16,8 @@ const fallbackStories = [
 
 export default function Journal() {
   const [databaseStories, setDatabaseStories] = useState(null);
+  const pageContent = usePageContent("journal");
+  const journalHeroImage = pageContent.hero_image_url || blogs.find((item) => item.slug === "garden-we-built")?.cover;
   useEffect(() => {
     let active = true;
     if (!supabase) return undefined;
@@ -47,7 +50,7 @@ export default function Journal() {
       <header className="journal-header"><Link to="/" className="journal-wordmark">hasiru haadi<span>.</span></Link><span className="journal-header-note">A JOURNAL OF LITTLE THINGS</span></header>
       <section className="journal-hero" aria-labelledby="journal-title">
         <div className="journal-hero-copy"><p className="journal-eyebrow">NOTES FROM A GREEN LIFE</p><h1 id="journal-title">Stories rooted <em>in nature.</em></h1><p className="journal-hero-subtitle">Memories that keep growing.</p><p className="journal-intro">A little collection of my experiences, village memories, garden adventures and everything that makes life greener.</p><a className="journal-text-link" href="#latest-stories">Wander through the journal <span aria-hidden="true">↓</span></a></div>
-        <div className="journal-hero-image-wrap"><img src={blogs.find((item) => item.slug === "garden-we-built")?.cover} alt="A glimpse of the Hasiru Haadi garden" className="journal-hero-image" /><span className="journal-image-caption">A little world, growing every day</span></div>
+        <div className="journal-hero-image-wrap"><img src={journalHeroImage} alt="A glimpse of the Hasiru Haadi garden" className="journal-hero-image" /><span className="journal-image-caption">A little world, growing every day</span></div>
       </section>
       <section className="journal-welcome"><p className="journal-eyebrow">WELCOME, I'M GLAD YOU'RE HERE</p><h2>Every little thing has a story.</h2><p>Some stories begin in a garden, some on a quiet village road, and some with a tiny plant growing in a reused container. This is where I keep those moments — just as they are, with a little room for wonder.</p></section>
       {featured && <section className="journal-featured" aria-labelledby="featured-title"><div className="journal-section-heading"><div><p className="journal-eyebrow">A PLACE CLOSE TO MY HEART</p><h2>Featured story</h2></div><span className="journal-index">01 / FEATURED</span></div><Link to={`/journal/${featured.slug}`} className="journal-feature-link"><img src={featured.cover || featured.image} alt={featured.coverAlt || "A featured Hasiru Haadi story"} className="journal-feature-image" /><div className="journal-feature-copy"><p className="journal-eyebrow">{featured.category}</p><h3 id="featured-title">{featured.title}</h3><p>{featured.excerpt}</p><span className="journal-read-link">Visit the story <span aria-hidden="true">↗</span></span></div></Link></section>}
