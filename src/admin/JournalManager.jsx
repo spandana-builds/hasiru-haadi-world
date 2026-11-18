@@ -5,6 +5,8 @@ import { blogs } from "../data/blogs";
 import { fromDatabasePost, toDatabasePost } from "../lib/journal";
 import "./admin.css";
 
+const BUCKET = "hasiru-haadi-media";
+
 const EMPTY = {
   slug: "", category: "GARDEN DIARIES", title: "", excerpt: "", readTime: "1 min read",
   cover: "", coverAlt: "", introduction: "", paragraphsText: "", closingThought: "",
@@ -180,18 +182,54 @@ export default function JournalManager() {
     else { setNotice("Story deleted."); await loadPosts(); }
   }
 
+  async function uploadSeedImage(sourceUrl, slug, label) {
+    const response = await fetch(sourceUrl);
+    if (!response.ok) throw new Error("Could not read an existing image for " + slug + ".");
+    const blob = await response.blob();
+    const extension = (sourceUrl.split("?")[0].split(".").pop() || "jpg").toLowerCase().replace(/[^a-z0-9]/g, "") || "jpg";
+    const path = "journal-seed-" + slug + "-" + label + "-" + crypto.randomUUID() + "." + extension;
+    const { error: uploadError } = await supabase.storage.from(BUCKET).upload(path, blob, {
+      contentType: blob.type || "image/jpeg",
+      cacheControl: "3600",
+      upsert: false,
+    });
+    if (uploadError) throw uploadError;
+    return supabase.storage.from(BUCKET).getPublicUrl(path).data.publicUrl;
+  }
+
   async function seedExistingStories() {
     setSaving(true);
     setError("");
+    setNotice("");
     const { data: existing, error: checkError } = await supabase.from("journal_posts").select("slug");
     if (checkError) { setError(checkError.message); setSaving(false); return; }
     const known = new Set((existing || []).map((row) => row.slug));
-    const missing = blogs.filter((blog) => !known.has(blog.slug)).map((blog) => toDatabasePost(fromBlog(blog)));
-    if (!missing.length) setNotice("Your original stories are already in the database.");
-    else {
-      const { error: insertError } = await supabase.from("journal_posts").insert(missing);
-      if (insertError) setError(insertError.message);
-      else setNotice(missing.length + " original stories imported. Their existing text and images are preserved.");
+    const missing = blogs.filter((blog) => !known.has(blog.slug));
+    if (!missing.length) {
+      setNotice("Your original stories are already in the database.");
+    } else {
+      try {
+        const migrated = [];
+        for (const blog of missing) {
+          const post = fromBlog(blog);
+          post.cover = await uploadSeedImage(blog.cover, blog.slug, "cover");
+          const gallery = [];
+          for (let index = 0; index < (blog.gallery || []).length; index += 1) {
+            const image = blog.gallery[index];
+            gallery.push({
+              src: await uploadSeedImage(image.src, blog.slug, "gallery-" + (index + 1)),
+              alt: image.alt,
+            });
+          }
+          post.gallery = gallery;
+          migrated.push(toDatabasePost(post));
+        }
+        const { error: insertError } = await supabase.from("journal_posts").insert(migrated);
+        if (insertError) throw insertError;
+        setNotice(migrated.length + " original stories imported. Their cover and gallery images were copied into your Supabase Media Library.");
+      } catch (migrationError) {
+        setError(migrationError.message || "Could not import the original stories. Check your Storage permissions and try again.");
+      }
     }
     await loadPosts();
     setSaving(false);
@@ -244,7 +282,7 @@ export default function JournalManager() {
 
       <section className="admin-storage-help">
         <button type="button" className="admin-storage-help-toggle" onClick={() => setShowSetup((value) => !value)} aria-expanded={showSetup}><span>Journal database setup & permissions</span><span>{showSetup ? "−" : "+"}</span></button>
-        {showSetup && <div className="admin-storage-help-content"><p>In Supabase → SQL Editor, replace every <code>YOUR_ADMIN_EMAIL</code> with your admin login email, then run this SQL once:</p><pre>{SQL}</pre><p>After the table is created, click <strong>Import original stories</strong> above. This copies the four existing stories and their current image references into the database; it does not delete or change your existing files.</p></div>}
+        {showSetup && <div className="admin-storage-help-content"><p>In Supabase → SQL Editor, replace every <code>YOUR_ADMIN_EMAIL</code> with your admin login email, then run this SQL once:</p><pre>{SQL}</pre><p>After the table is created, click <strong>Import original stories</strong> above. This copies the four existing stories and uploads their cover and gallery images into your Supabase Media Library, so the images keep working after deployment.</p></div>}
       </section>
     </main>
   );
