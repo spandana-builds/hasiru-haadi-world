@@ -1,4 +1,5 @@
 import BackToMap from "../components/BackToMap";
+import usePageContent from "../lib/usePageContent";
 import "./Plants.css";
 
 import plant1 from "../assets/plants/img1.jpg";
@@ -14,22 +15,23 @@ import heroImg from "../assets/plants/img10.jpg";
 
 
 export default function Plants() {
+  const pageContent = usePageContent("plants");
   return (
     <div className="plants-page">
       <BackToMap />
 
       {/* Hero */}
       <section className="plants-hero fade-in">
-         <img loading="lazy" src={heroImg} alt="potted plants" />
-        <h1>My Plants</h1>
+         <img loading="lazy" src={pageContent.hero_image_url || heroImg} alt="potted plants" />
+        <h1>{pageContent.hero_title || "My Plants"}</h1>
         <p className="plants-subtitle">
-          Where curiosity slowly turned into companionship.
+          {pageContent.hero_subtitle || "Where curiosity slowly turned into companionship."}
         </p>
       </section>
 
       {/* Story */}
       <section className="plants-story fade-in">
-        <h2>My Plant Journey</h2>
+        <h2>{pageContent.story_heading || "My Plant Journey"}</h2>
 
         <p>
           My interest in growing plants started during the COVID-19 lockdown.

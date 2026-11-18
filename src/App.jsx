@@ -1,19 +1,26 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { useEffect } from "react";
 import WorldMap from "./components/Map/WorldMap";
-
 import Garden from "./pages/Garden";
 import Village from "./pages/Village";
 import Plants from "./pages/Plants";
 import Gallery from "./pages/Gallery";
 import Farm from "./pages/Farm";
 import Shop from "./pages/Shop";
-import { useEffect } from "react";
-
+import Journal from "./pages/Journal";
+import BlogPost from "./pages/BlogPost";
+import AdminLogin from "./admin/AdminLogin";
+import AdminDashboard from "./admin/AdminDashboard";
+import MediaLibrary from "./admin/MediaLibrary";
+import JournalManager from "./admin/JournalManager";
+import ShopManager from "./admin/ShopManager";
+import PageContentManager from "./admin/PageContentManager";
+import AdminRoute from "./admin/AdminRoute";
 
 function App() {
   useEffect(() => {
-  document.title = "Hasiru Haadi — Garden, Farm & Green Living";
-}, []);
+    document.title = "Hasiru Haadi — Stories Rooted in Nature";
+  }, []);
 
   return (
     <BrowserRouter>
@@ -25,6 +32,14 @@ function App() {
         <Route path="/gallery" element={<Gallery />} />
         <Route path="/farm" element={<Farm />} />
         <Route path="/shop" element={<Shop />} />
+        <Route path="/journal" element={<Journal />} />
+        <Route path="/journal/:slug" element={<BlogPost />} />
+        <Route path="/admin" element={<AdminLogin />} />
+        <Route path="/admin/dashboard" element={<AdminRoute><AdminDashboard /></AdminRoute>} />
+        <Route path="/admin/media" element={<AdminRoute><MediaLibrary /></AdminRoute>} />
+        <Route path="/admin/journal" element={<AdminRoute><JournalManager /></AdminRoute>} />
+        <Route path="/admin/shop" element={<AdminRoute><ShopManager /></AdminRoute>} />
+        <Route path="/admin/content" element={<AdminRoute><PageContentManager /></AdminRoute>} />
       </Routes>
     </BrowserRouter>
   );

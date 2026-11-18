@@ -1,4 +1,5 @@
 import BackToMap from "../components/BackToMap";
+import usePageContent from "../lib/usePageContent";
 import "./Village.css";
 
 import heroImg from "../assets/village/hero-village.jpg";
@@ -9,16 +10,17 @@ import skyImg from "../assets/village/village-sky.jpg";
 import detailImg from "../assets/village/village-5.jpg";
 
 export default function Village() {
+  const pageContent = usePageContent("village");
   return (
     <div className="village-page">
       <BackToMap />
 
       {/* Hero */}
       <section className="village-hero fade-in">
-        <img loading="lazy" src={heroImg} alt="Yerigenahalli village at dusk" />
-        <h1>Yerigenahalli</h1>
+        <img loading="lazy" src={pageContent.hero_image_url || heroImg} alt="Yerigenahalli village at dusk" />
+        <h1>{pageContent.hero_title || "Yerigenahalli"}</h1>
         <p className="village-subtitle">
-          Where life moves with the land, light, and people.
+          {pageContent.hero_subtitle || "Where life moves with the land, light, and people."}
         </p>
       </section>
 

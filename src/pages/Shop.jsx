@@ -1,4 +1,6 @@
+import { useEffect, useState } from "react";
 import BackToMap from "../components/BackToMap";
+import { supabase } from "../lib/supabase";
 import "./Shop.css";
 
 import heroImg from "../assets/shop/hero4.png";
@@ -9,6 +11,16 @@ import img4 from "../assets/shop/img4.jpeg";
 import img5 from "../assets/shop/img5.jpg";
 
 export default function Shop() {
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    let active = true;
+    if (!supabase) return () => { active = false; };
+    supabase.from("shop_products").select("id,name,category,description,price,image_url,image_alt,product_url").eq("active", true).order("sort_order", { ascending: true }).order("created_at", { ascending: false })
+      .then(({ data, error }) => { if (active && !error) setProducts(data || []); });
+    return () => { active = false; };
+  }, []);
+
   return (
     <div className="shop-page">
       <BackToMap />
@@ -54,6 +66,30 @@ export default function Shop() {
           Bring a piece of Hasiru Haadi into your own space 🌿
         </p>
       </section>
+
+      {/* Products managed from the private admin */}
+      {products.length > 0 && (
+        <section className="shop-products fade-in">
+          <h2>Our Little Shop</h2>
+          <p className="shop-products-intro">A few things we have grown, gathered and made with care.</p>
+          <div className="shop-product-grid">
+            {products.map((product) => (
+              <article className="shop-product-card" key={product.id}>
+                <img src={product.image_url} alt={product.image_alt || product.name} loading="lazy" />
+                <div className="shop-product-copy">
+                  <span className="shop-product-category">{product.category}</span>
+                  <h3>{product.name}</h3>
+                  {product.description && <p>{product.description}</p>}
+                  <div className="shop-product-bottom">
+                    {product.price != null && <strong>₹{Number(product.price).toLocaleString("en-IN")}</strong>}
+                    {product.product_url && <a href={product.product_url} target="_blank" rel="noopener noreferrer">View product ↗</a>}
+                  </div>
+                </div>
+              </article>
+            ))}
+          </div>
+        </section>
+      )}
 
       {/* Shop Moments */}
       <section className="shop-moments fade-in">
