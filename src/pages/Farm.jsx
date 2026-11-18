@@ -1,4 +1,5 @@
 import BackToMap from "../components/BackToMap";
+import usePageContent from "../lib/usePageContent";
 import "./Farm.css";
 
 import farm1 from "../assets/farm/eee.jpg";
@@ -10,22 +11,23 @@ import farm5 from "../assets/farm/img5.jpg";
 import heroImg from "../assets/farm/hero-img2.jpg";
 
 export default function Farm() {
+  const pageContent = usePageContent("farm");
   return (
     <div className="farm-page">
       <BackToMap />
 
       {/* Hero */}
       <section className="farm-hero fade-in">
-        <img loading="lazy" src={heroImg} alt="Our farm" />
+        <img loading="lazy" src={pageContent.hero_image_url || heroImg} alt="Our farm" />
         <h1>Our Farm</h1>
         <p className="farm-subtitle">
-          Rooted in tradition, growing with care.
+          {pageContent.hero_subtitle || "Rooted in tradition, growing with care."}
         </p>
       </section>
 
       {/* Story */}
       <section className="farm-story fade-in">
-        <h2>Our Farm Story</h2>
+        <h2>{pageContent.story_heading || "Our Farm Story"}</h2>
 
         <p>
           Living in the heart of Kalpataru Naadu, our lives are shaded by the grace
