@@ -1,4 +1,5 @@
 import BackToMap from "../components/BackToMap";
+import usePageContent from "../lib/usePageContent";
 import "./Garden.css";
 
 import heroImg from "../assets/garden/hero.jpeg";
@@ -8,22 +9,23 @@ import harvestImg from "../assets/garden/harvest-radish.jpg";
 import methiImg from "../assets/garden/methi-harvest.jpg";
 
 export default function Garden() {
+  const pageContent = usePageContent("garden");
   return (
     <div className="garden-page">
       <BackToMap />
 
       {/* Hero */}
       <section className="garden-hero fade-in">
-        <img loading="lazy" src={heroImg} alt="Harvested peas in hand at sunset" />
+        <img loading="lazy" src={pageContent.hero_image_url || heroImg} alt="Harvested peas in hand at sunset" />
         <h1>Our Garden</h1>
         <p className="garden-subtitle">
-          A small backyard where patience turns into food.
+          {pageContent.hero_subtitle || "A small backyard where patience turns into food."}
         </p>
       </section>
 
       {/* Story */}
       <section className="garden-story fade-in">
-        <h2>My Garden Story</h2>
+        <h2>{pageContent.story_heading || "My Garden Story"}</h2>
 
         <p>
           My sister and I built our backyard garden with our own hands and a lot
