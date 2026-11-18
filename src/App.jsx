@@ -13,6 +13,7 @@ import AdminLogin from "./admin/AdminLogin";
 import AdminDashboard from "./admin/AdminDashboard";
 import MediaLibrary from "./admin/MediaLibrary";
 import JournalManager from "./admin/JournalManager";
+import ShopManager from "./admin/ShopManager";
 import AdminRoute from "./admin/AdminRoute";
 
 function App() {
@@ -36,6 +37,7 @@ function App() {
         <Route path="/admin/dashboard" element={<AdminRoute><AdminDashboard /></AdminRoute>} />
         <Route path="/admin/media" element={<AdminRoute><MediaLibrary /></AdminRoute>} />
         <Route path="/admin/journal" element={<AdminRoute><JournalManager /></AdminRoute>} />
+        <Route path="/admin/shop" element={<AdminRoute><ShopManager /></AdminRoute>} />
       </Routes>
     </BrowserRouter>
   );
