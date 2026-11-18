@@ -23,7 +23,7 @@ export default function Plants() {
       {/* Hero */}
       <section className="plants-hero fade-in">
          <img loading="lazy" src={pageContent.hero_image_url || heroImg} alt="potted plants" />
-        <h1>My Plants</h1>
+        <h1>{pageContent.hero_title || "My Plants"}</h1>
         <p className="plants-subtitle">
           {pageContent.hero_subtitle || "Where curiosity slowly turned into companionship."}
         </p>
