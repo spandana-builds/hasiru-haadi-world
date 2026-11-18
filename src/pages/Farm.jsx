@@ -19,7 +19,7 @@ export default function Farm() {
       {/* Hero */}
       <section className="farm-hero fade-in">
         <img loading="lazy" src={pageContent.hero_image_url || heroImg} alt="Our farm" />
-        <h1>Our Farm</h1>
+        <h1>{pageContent.hero_title || "Our Farm"}</h1>
         <p className="farm-subtitle">
           {pageContent.hero_subtitle || "Rooted in tradition, growing with care."}
         </p>
