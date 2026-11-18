@@ -242,3 +242,11 @@
   .admin-topbar .admin-brand { font-size: 19px; }
   .admin-back-dashboard { font-size: 11px; }
 }
+
+
+.admin-shop-page { max-width: 1440px; }
+.admin-shop-editor { margin-top: 4px; padding: 28px; border: 1px solid #e2eadd; border-radius: 17px; background: rgba(255,255,255,.82); }
+.admin-shop-product-list { display: grid; gap: 12px; }
+.admin-shop-product-list .admin-journal-post-row { border: 1px solid #e2eadd; border-radius: 13px; background: rgba(255,255,255,.78); }
+.admin-shop-product-list .admin-journal-post-row>img { object-fit: cover; }
+@media (max-width: 700px) { .admin-shop-editor { padding: 18px; } }
